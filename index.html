@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Profile Viewer - Download Profile Pictures & Banners</title>
+    <meta name="description" content="View and download Discord profile pictures and banners in high quality. Search by Discord User ID.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎭%3C/text%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Discord Profile Viewer - Download Profile Pictures">
+    <meta property="og:description" content="View and download Discord profile pictures and banners in high quality">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Discord Profile Viewer">
+    <meta name="twitter:description" content="View and download Discord profile pictures and banners">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    
+    
+    <!-- Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- Logo and Brand -->
+            <div class="brand">
+                <a href="/" class="logo" aria-label="Discord Profile Viewer Home">
+                    <span class="logo-icon">💜</span>
+                    <span class="logo-text">Disclaimer: Our website is <u>not affiliated</u> with Discord Inc  </span>
+                </a>
+            </div>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C13.029 15.75 9 11.721 9 6.75A9.718 9.718 0 0 1 9.748 2.248A10.003 10.003 0 0 0 2 12C2 17.523 6.477 22 12 22A10.003 10.003 0 0 0 21.752 15.002Z" fill="currentColor"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.071 4.929L17.657 6.343M6.343 17.657L4.929 19.071M19.071 19.071L17.657 17.657M6.343 6.343L4.929 4.929M16 12C16 14.209 14.209 16 12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero" aria-labelledby="hero-title">
+                <h1 id="hero-title" class="hero-title">
+                    💜 Discord Profile Viewer
+                </h1>
+                <p class="hero-description">
+                    View and download Discord profile pictures and banners in high quality. Simply enter a Discord User ID to get started.
+                </p>
+            </section>
+            
+            <!-- Discord PFP Viewer Section -->
+            <section class="discord-pfp-viewer" aria-labelledby="discord-section-title">
+                <div class="discord-section-header">
+                    <h2 id="discord-section-title" class="section-title">
+                        <span class="discord-icon">💬</span>
+                        Search Discord Profile
+                    </h2>
+                    <p class="section-description">
+                        Enter any Discord User ID to view and download their profile picture and banner in high quality
+                    </p>
+                </div>
+                
+                <div class="discord-search-container">
+                    <div class="discord-search-form">
+                        <div class="discord-input-group">
+                            <label for="discord-user-id" class="discord-label">Discord User/Bot ID:</label>
+                            <div class="discord-input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="discord-user-id" 
+                                    class="discord-input" 
+                                    placeholder="Enter Discord User ID (e.g., 123456789012345678)"
+                                    pattern="[0-9]{17,19}"
+                                    title="Discord User ID should be 17-19 digits"
+                                    aria-describedby="discord-help-text"
+                                >
+                                <button class="discord-search-btn" id="discord-search-btn" type="button">
+                                    <svg class="discord-search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 21L15.515 15.515M15.515 15.515A7.5 7.5 0 1 0 4.515 4.515A7.5 7.5 0 0 0 15.515 15.515Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Search
+                                </button>
+                            </div>
+                            <small id="discord-help-text" class="discord-help-text">
+                                Right-click on a Discord user → Copy User ID (Developer Mode must be enabled)
+                                <button class="discord-help-toggle" id="discord-help-toggle">Need help finding User ID?</button>
+                            </small>
+                        </div>
+                    </div>
+                    
+                    <!-- Help Section -->
+                    <div class="discord-help-section" id="discord-help-section" style="display: none;">
+                        <div class="help-card">
+                            <h4 class="help-title">📋 How to Get Discord User ID</h4>
+                            <div class="help-steps">
+                                <div class="help-step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h5>Enable Developer Mode</h5>
+                                        <p>Go to Discord Settings → Advanced → Enable "Developer Mode"</p>
+                                    </div>
+                                </div>
+                                <div class="help-step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h5>Right-click on User</h5>
+                                        <p>Right-click on any user's avatar or username</p>
+                                    </div>
+                                </div>
+                                <div class="help-step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h5>Copy User ID</h5>
+                                        <p>Click "Copy User ID" from the context menu</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="help-examples">
+                                <h5>Example User IDs to try:</h5>
+                                <div class="example-ids">
+                                    <button class="example-id-btn" data-id="235088799074484224">235088799074484224</button>
+                                    <button class="example-id-btn" data-id="155149108183695360">155149108183695360</button>
+                                    <button class="example-id-btn" data-id="432610292342587392">432610292342587392</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Discord PFP Results -->
+                    <div class="discord-results" id="discord-results" style="display: none;">
+                        <div class="discord-user-card">
+                            <div class="discord-avatar-container">
+                                <img id="discord-avatar" class="discord-avatar" src="" alt="Discord Avatar">
+                                <div class="discord-avatar-overlay">
+                                    <button class="discord-preview-btn" id="discord-preview-btn" aria-label="Preview Avatar">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="discord-user-info">
+                                <h3 id="discord-username" class="discord-username">Loading...</h3>
+                                <p id="discord-user-id-display" class="discord-user-id-display"></p>
+                                <p id="discord-creation-date" class="discord-creation-date"></p>
+                                <div class="discord-user-badges" id="discord-user-badges"></div>
+                            </div>
+
+                            
+                            <div class="discord-download-options">
+                                <div class="download-section">
+                                    <h4 class="download-section-title">🖼️ Profile Picture</h4>
+                                    <div class="download-controls">
+                                        <div class="discord-format-selector">
+                                            <label for="avatar-format" class="discord-format-label">Format:</label>
+                                            <select id="avatar-format" class="discord-format-select">
+                                                <option value="png" selected>PNG (Highest Quality)</option>
+                                                <option value="jpg">JPG</option>
+                                                <option value="webp">WebP</option>
+                                                <option value="gif">GIF (if animated)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="discord-download-btn primary" id="discord-download-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Download Profile Picture
+                                    </button>
+                                </div>
+                                
+                                <div class="download-section banner-section" id="banner-download-section" style="display: none;">
+                                    <h4 class="download-section-title">🌆 Profile Banner</h4>
+                                    <p class="banner-info">High quality banner (1024x1024)</p>
+                                    
+                                    <button class="discord-download-btn secondary" id="discord-banner-download-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Download Banner
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Discord Loading State -->
+                    <div class="discord-loading" id="discord-loading" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <p class="loading-text">Fetching Discord profile...</p>
+                    </div>
+                    
+                    <!-- Discord Error State -->
+                    <div class="discord-error" id="discord-error" style="display: none;">
+                        <div class="error-icon">⚠️</div>
+                        <h3 class="error-title">Failed to fetch profile</h3>
+                        <p class="error-message" id="discord-error-message">Please check the User ID and try again.</p>
+                        <button class="error-retry-btn" id="discord-retry-btn">Try Again</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Discord Profile Viewer</h3>
+                    <p class="footer-description">
+                        Your go-to tool for viewing and downloading Discord profile pictures and banners.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Features</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Profile Pictures</a></li>
+                        <li><a href="#">Profile Banners</a></li>
+                        <li><a href="#">High Quality Downloads</a></li>
+                        <li><a href="#">Multiple Formats</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Not affiliated with Discord, Inc. .
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Image Preview Modal -->
+    <div class="modal" id="image-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title">Image Preview</h2>
+                <button class="modal-close" id="modal-close" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-image" class="modal-image" src="" alt="">
+                </div>
+                
+                <div class="modal-info">
+                    <h3 id="modal-image-title" class="modal-image-title"></h3>
+                    <p id="modal-image-category" class="modal-image-category"></p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="download-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Download
+                        </button>
+                        <button class="btn btn-secondary" id="share-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 5.18885 15.0133 5.37442 15.0387 5.55624L8.56815 9.24695C8.01119 8.46217 7.08205 7.96094 6.03077 7.96094C4.25769 7.96094 2.82031 9.39832 2.82031 11.1714C2.82031 12.9445 4.25769 14.3819 6.03077 14.3819C7.08205 14.3819 8.01119 13.8806 8.56815 13.0959L15.0387 16.7866C15.0133 16.9684 15 17.154 15 17.3428C15 19.0159 16.4374 20.4533 18.2105 20.4533C19.9836 20.4533 21.421 19.0159 21.421 17.3428C21.421 15.6697 19.9836 14.2323 18.2105 14.2323C17.1592 14.2323 16.2301 14.7336 15.673 15.5183L9.20248 11.8276C9.22789 11.6458 9.24123 11.4602 9.24123 11.2714C9.24123 11.0826 9.22789 10.897 9.20248 10.7152L15.673 7.02449C16.2301 7.80927 17.1592 8.31051 18.2105 8.31051Z" fill="currentColor"/>
+                            </svg>
+                            Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
