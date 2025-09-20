@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: 
+
+# Sitemap
+Sitemap: https://jsinfinity.infor/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
