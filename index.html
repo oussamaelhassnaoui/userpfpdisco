@@ -159,12 +159,12 @@
             <div class="main-content-wrapper">
             <!-- Hero Section -->
             <section class="hero" aria-labelledby="hero-title">
-                <div class="hero-header">
-                    <img src="pfpdicor.svg" width="40" height="40" loading="lazy" alt="Discord Avatar & Profile Picture Downloader Logo" class="hero-logo">
-                    <h1 id="hero-title" class="hero-title">
-                        Discord Avatar & Profile Picture Downloader
-                    </h1>
+                <div class="hero-logo">
+                    <img src="pfpdicor.svg" width="40" height="40" loading="lazy" alt="Discord Avatar & Profile Picture Downloader Logo">
                 </div>
+                <h1 id="hero-title" class="hero-title">
+                 Discord Avatar & Profile Picture Downloader
+                </h1>
                 <p class="hero-description">
                     Find and download Discord avatars and profile pictures by user ID with our Discord PFP lookup tool
                 </p>
@@ -233,7 +233,7 @@
                             
                             <div class="discord-download-options">
                                 <div class="download-section">
-                                    <h4 class="download-section-title"> Profile Picture</h4>
+                                    <h4 class="download-section-title">🖼️ Profile Picture</h4>
                                     <div class="download-controls">
                                         <div class="discord-format-selector">
                                             <label for="avatar-format" class="discord-format-label">Format:</label>
@@ -255,15 +255,21 @@
                                 </div>
                                 
                                 <div class="download-section banner-section" id="banner-download-section" style="display: none;">
-                                    <h4 class="download-section-title"> Profile Banner</h4>
+                                    <h4 class="download-section-title">🌆 Profile Banner</h4>
                                     <p class="banner-info">High quality banner (1024x1024)</p>
+                                    
+                                    <button class="discord-download-btn secondary" id="discord-banner-download-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Download Banner
                                     </button>
                                 </div>
                             </div>
                             
                             <!-- Discord Banner Display in User Card -->
                             <div class="discord-banner-card-section" id="discord-banner-card-section" style="display: none; margin: 20px 0;">
-                                
+                                <h4 class="discord-banner-title">Profile Banner</h4>
                                 <div class="discord-banner-card-container">
                                     <img id="discord-banner-card" class="discord-banner-card" src="" alt="Discord Banner" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
                                     <div class="discord-banner-card-overlay">
@@ -285,7 +291,9 @@
                             
                             <!-- Discord Banner Display -->
                             <div class="discord-banner-section" id="discord-banner-section" style="display: none;">
-                                
+                                <h4 class="discord-banner-title">Profile Banner</h4>
+                                <div class="discord-banner-container">
+                                    <img id="discord-banner" class="discord-banner" src="" alt="Discord Banner">
                                     <div class="discord-banner-placeholder" id="discord-banner-placeholder" style="display: none; padding: var(--space-xl); text-align: center; color: var(--color-text-tertiary);">
                                         <p>Loading banner<span class="loading-dots"></span></p>
                                     </div>
@@ -340,7 +348,7 @@
                     <!-- Visual Guide Section -->
                     <div class="discord-help-section" style="margin-top: 20px;">
                         <div class="help-card">
-                            <h4 class="help-title"> Visual Guide: How to Get Your Discord ID</h4>
+                            <h4 class="help-title">🖼️ Visual Guide: How to Get Your Discord ID</h4>
                             <div class="visual-guide-steps">
                                 <div class="visual-guide-step">
                                     <span class="step-number">1</span>
