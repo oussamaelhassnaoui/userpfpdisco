@@ -2,8 +2,5 @@ User-agent: *
 Allow: /
 Disallow: 
 
-# Sitemap
-Sitemap: https://jsinfinity.infor/sitemap.xml
-
-# Crawl-delay
+Sitemap: https://pfpsaver.com/sitemap.xml
 Crawl-delay: 1
