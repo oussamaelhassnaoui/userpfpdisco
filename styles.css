@@ -356,6 +356,10 @@ body {
 }
 
 .hero-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
     flex-shrink: 0;
 }
 
@@ -1515,3 +1519,4 @@ body {
 .discord-banner-card-container:hover .discord-banner-card {
     transform: scale(1.02);
 }
+
