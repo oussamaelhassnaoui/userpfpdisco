@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#5865f2">
-    <title>Discord Avatar & Profile Picture Downloader - Discord PFP Lookup by ID</title>
+    <title>Discord PFP Viewer</title>
     <meta name="description" content="Free Discord avatar and profile picture downloader. Find Discord profiles by ID with our Discord PFP lookup tool. Download high-quality Discord avatars, profile pictures, and banners instantly. Search profile Discord by user ID.">
     
     <!-- Preconnect to external domains -->
@@ -31,6 +31,16 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Discord ID Lookup Tool">
     <link rel="canonical" href="https://pfpsaver.com/">
+    <link rel="alternate" hreflang="en" href="https://pfpsaver.com/">
+    <link rel="alternate" hreflang="fr" href="https://pfpsaver.com/index-fr.html">
+    <link rel="alternate" hreflang="de" href="https://pfpsaver.com/index-de.html">
+    <link rel="alternate" hreflang="es" href="https://pfpsaver.com/index-es.html">
+    <link rel="alternate" hreflang="ar" href="https://pfpsaver.com/index-ar.html">
+    <link rel="alternate" hreflang="zh" href="https://pfpsaver.com/index-zh.html">
+    <link rel="alternate" hreflang="it" href="https://pfpsaver.com/index-it.html">
+    <link rel="alternate" hreflang="ko" href="https://pfpsaver.com/index-ko.html">
+    <link rel="alternate" hreflang="pl" href="https://pfpsaver.com/index-pl.html">
+    <link rel="alternate" hreflang="uk" href="https://pfpsaver.com/index-uk.html">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     
     <!-- Open Graph Meta Tags -->
@@ -113,6 +123,15 @@
       }]
     }
     </script>
+    <!-- WebSite Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Discord PFP Viewer",
+      "url": "https://pfpsaver.com"
+    }
+    </script>
      <script type="text/javascript">
     (function() {
     window.__insp = window.__insp || [];
@@ -140,6 +159,21 @@
             
             <!-- Header Actions -->
             <div class="header-actions">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="en" selected>English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                        <option value="zh">中文</option>
+                        <option value="it">Italiano</option>
+                        <option value="ko">한국어</option>
+                        <option value="pl">Polski</option>
+                        <option value="uk">Українська</option>
+                    </select>
+                </div>
                 <!-- Theme Toggle -->
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
                     <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

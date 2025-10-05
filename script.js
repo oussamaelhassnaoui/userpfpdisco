@@ -37,6 +37,65 @@ class ThemeManager {
     }
 }
 
+class LanguageManager {
+    constructor() {
+        this.languageSelector = document.getElementById('language-selector');
+        this.availableLangs = ['en', 'fr', 'de', 'es', 'ar', 'zh', 'it', 'ko', 'pl', 'uk'];
+        this.init();
+    }
+
+    init() {
+        this.detectAndRedirect();
+        this.bindEvents();
+        this.updateSelector();
+    }
+
+    bindEvents() {
+        if (this.languageSelector) {
+            this.languageSelector.addEventListener('change', (e) => this.handleLanguageChange(e));
+        }
+    }
+
+    handleLanguageChange(e) {
+        const selectedLang = e.target.value;
+        localStorage.setItem('language', selectedLang);
+        this.redirectToLang(selectedLang);
+    }
+
+    redirectToLang(lang) {
+        if (lang === 'en') {
+            window.location.href = 'index.html';
+        } else {
+            window.location.href = `index-${lang}.html`;
+        }
+    }
+
+    detectAndRedirect() {
+        const storedLang = localStorage.getItem('language');
+        if (storedLang) {
+            return; // User has already made a selection
+        }
+
+        const browserLang = navigator.language.split('-')[0];
+        const currentPath = window.location.pathname.split('/').pop();
+
+        if (this.availableLangs.includes(browserLang)) {
+            if (browserLang === 'en' && currentPath !== 'index.html' && currentPath !== '') {
+                this.redirectToLang('en');
+            } else if (browserLang !== 'en' && currentPath !== `index-${browserLang}.html`) {
+                this.redirectToLang(browserLang);
+            }
+        }
+    }
+
+    updateSelector() {
+        const storedLang = localStorage.getItem('language');
+        if (storedLang && this.languageSelector) {
+            this.languageSelector.value = storedLang;
+        }
+    }
+}
+
 // Mobile Menu Management
 class MobileMenuManager {
     constructor() {
@@ -661,6 +720,21 @@ class DiscordPFPViewer {
         }
         
         this.populateUserData(userData);
+
+        // Pre-fetch high-resolution images
+        const avatarUrl = this.getAvatarUrl(userData, 4096);
+        this.preFetchImage(avatarUrl);
+
+        if (userData.banner) {
+            const bannerUrl = this.getBannerUrl(userData, 1024);
+            this.preFetchImage(bannerUrl);
+        }
+    }
+
+    preFetchImage(url) {
+        if (!url) return;
+        const img = new Image();
+        img.src = url;
     }
 
     showError(message) {
@@ -904,46 +978,36 @@ class DiscordPFPViewer {
     }
     
     async downloadBanner() {
-        try {
-            console.log('Banner download initiated');
-            if (!this.currentUserData || !this.currentUserData.banner) {
-                console.log('No banner data available');
-                if (window.ErrorHandler) {
-                    ErrorHandler.showNotification('No banner available for this user', 'error');
-                }
-                return;
-            }
-            
-            const bannerUrl = this.getBannerUrl(this.currentUserData, 1024, 'png');
-            console.log('Banner URL:', bannerUrl);
-            
-            // Check if URL is valid
-            if (!bannerUrl) {
-                console.error('Invalid banner URL');
-                if (window.ErrorHandler) {
-                    ErrorHandler.showNotification('Unable to generate download URL', 'error');
-                }
-                return;
-            }
-            
-            // Show loading state with dot animation
-            const originalBtnContent = this.bannerDownloadBtn.innerHTML;
-            this.bannerDownloadBtn.disabled = true;
-            this.bannerDownloadBtn.innerHTML = 'Downloading<span class="loading-dots"></span>';
-            
-            // Also update the banner card download button if it exists
-            if (this.bannerCardDownloadBtn) {
-                this.bannerCardDownloadBtn.disabled = true;
-                this.bannerCardDownloadBtn.innerHTML = 'Downloading<span class="loading-dots"></span>';
-            }
-            
-            // Create download link and trigger download
-            const filename = `discord-banner-${this.currentUserData.id}-1024x1024.png`;
-            // Use improved download method that handles Discord CDN properly
-            this.triggerDownload(bannerUrl, filename);
-            
-            // Show success notification
+        if (!this.currentUserData || !this.currentUserData.banner) {
             if (window.ErrorHandler) {
+                ErrorHandler.showNotification('No banner available for this user', 'error');
+            }
+            return;
+        }
+
+        const bannerUrl = this.getBannerUrl(this.currentUserData, 1024, 'png');
+
+        if (!bannerUrl) {
+            if (window.ErrorHandler) {
+                ErrorHandler.showNotification('Unable to generate download URL', 'error');
+            }
+            return;
+        }
+
+        const originalBtnContent = this.bannerDownloadBtn.innerHTML;
+        this.bannerDownloadBtn.disabled = true;
+        this.bannerDownloadBtn.innerHTML = '<div class="spinner"></div> Downloading...';
+
+        if (this.bannerCardDownloadBtn) {
+            this.bannerCardDownloadBtn.disabled = true;
+            this.bannerCardDownloadBtn.innerHTML = '<div class="spinner"></div> Downloading...';
+        }
+
+        try {
+            const filename = `discord-banner-${this.currentUserData.id}-1024x1024.png`;
+            const downloadSuccess = await this.triggerDownload(bannerUrl, filename);
+
+            if (downloadSuccess && window.ErrorHandler) {
                 ErrorHandler.showNotification('Banner download started!', 'success');
             }
         } catch (error) {
@@ -952,25 +1016,13 @@ class DiscordPFPViewer {
                 ErrorHandler.showNotification(`Failed to download banner: ${error.message}`, 'error');
             }
         } finally {
-            // Restore button state after a short delay
             setTimeout(() => {
                 this.bannerDownloadBtn.disabled = false;
-                this.bannerDownloadBtn.innerHTML = `
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Download Banner
-                `;
-                
-                // Also restore the banner card download button if it exists
+                this.bannerDownloadBtn.innerHTML = originalBtnContent;
+
                 if (this.bannerCardDownloadBtn) {
                     this.bannerCardDownloadBtn.disabled = false;
-                    this.bannerCardDownloadBtn.innerHTML = `
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Download Banner
-                    `;
+                    this.bannerCardDownloadBtn.innerHTML = originalBtnContent;
                 }
             }, 1000);
         }
@@ -1047,167 +1099,79 @@ class DiscordPFPViewer {
     }
 
     async downloadAvatar() {
-        try {
-            console.log('Avatar download initiated');
-            if (!this.currentUserData) {
-                console.log('No user data available');
-                if (window.ErrorHandler) {
-                    ErrorHandler.showNotification('No user data available. Please search for a user first.', 'error');
-                }
-                return;
-            }
-            
-            const format = this.formatSelect?.value || 'png';
-            // Always download at highest quality (4096 for custom avatars, 1024 for default)
-            const size = this.currentUserData.avatar ? 4096 : 1024;
-            const avatarUrl = this.getAvatarUrl(this.currentUserData, size, format);
-            console.log('Avatar URL:', avatarUrl);
-            
-            // Check if URL is valid
-            if (!avatarUrl) {
-                console.error('Invalid avatar URL');
-                if (window.ErrorHandler) {
-                    ErrorHandler.showNotification('Unable to generate download URL', 'error');
-                }
-                return;
-            }
-            
-            // Show loading state with dot animation
-            const originalBtnContent = this.downloadBtn.innerHTML;
-            this.downloadBtn.disabled = true;
-            this.downloadBtn.innerHTML = 'Downloading<span class="loading-dots"></span>';
-            
-            // Create download link and trigger download
-            const filename = `discord-avatar-${this.currentUserData.id}-${size}x${size}.${format}`;
-            console.log('Attempting to download with filename:', filename);
-            
-            // Use improved download method that handles Discord CDN properly
-            const downloadSuccess = this.triggerDownload(avatarUrl, filename);
-            
-            // Show success notification
+        if (!this.currentUserData) {
             if (window.ErrorHandler) {
-                if (downloadSuccess) {
-                    ErrorHandler.showNotification(`Avatar download started!`, 'success');
-                } else {
-                    ErrorHandler.showNotification('Download may have opened in a new tab', 'warning');
-                }
+                ErrorHandler.showNotification('No user data available. Please search for a user first.', 'error');
             }
-            
+            return;
+        }
+
+        const format = this.formatSelect?.value || 'png';
+        const size = this.currentUserData.avatar ? 4096 : 1024;
+        const avatarUrl = this.getAvatarUrl(this.currentUserData, size, format);
+
+        if (!avatarUrl) {
+            if (window.ErrorHandler) {
+                ErrorHandler.showNotification('Unable to generate download URL', 'error');
+            }
+            return;
+        }
+
+        const originalBtnContent = this.downloadBtn.innerHTML;
+        this.downloadBtn.disabled = true;
+        this.downloadBtn.innerHTML = '<div class="spinner"></div> Downloading...';
+
+        try {
+            const filename = `discord-avatar-${this.currentUserData.id}-${size}x${size}.${format}`;
+            const downloadSuccess = await this.triggerDownload(avatarUrl, filename);
+
+            if (downloadSuccess && window.ErrorHandler) {
+                ErrorHandler.showNotification(`Avatar download started!`, 'success');
+            }
         } catch (error) {
             console.error('Download failed:', error);
             if (window.ErrorHandler) {
                 ErrorHandler.showNotification('Failed to download avatar. Please try again.', 'error');
             }
         } finally {
-            // Restore button state after a short delay
             setTimeout(() => {
                 this.downloadBtn.disabled = false;
-                this.downloadBtn.innerHTML = `
-                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    Download Profile Picture
-                `;
+                this.downloadBtn.innerHTML = originalBtnContent;
             }, 1000);
         }
     }
 
     // Add the missing triggerDownload method
-    triggerDownload(url, filename) {
+    async triggerDownload(url, filename) {
         try {
             console.log('Attempting to download:', { url, filename });
-            
-            // For Discord CDN URLs, we need to use a technique that works with their CDN
-            if (url.includes('cdn.discordapp.com')) {
-                // Try to fetch the image as a blob and create a download link
-                // This approach works even with CORS restrictions in many cases
-                fetch(url)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.blob();
-                    })
-                    .then(blob => {
-                        // Create a local object URL for the blob
-                        const blobUrl = URL.createObjectURL(blob);
-                        
-                        // Create a temporary anchor element for the blob
-                        const blobLink = document.createElement('a');
-                        blobLink.href = blobUrl;
-                        blobLink.download = filename || 'discord-image.png';
-                        
-                        // Trigger the download
-                        document.body.appendChild(blobLink);
-                        blobLink.click();
-                        document.body.removeChild(blobLink);
-                        
-                        // Clean up the object URL
-                        URL.revokeObjectURL(blobUrl);
-                        
-                        console.log('Download completed for Discord CDN:', filename);
-                        
-                        // Show success notification
-                        if (window.ErrorHandler) {
-                            ErrorHandler.showNotification('Download completed successfully!', 'success');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Failed to download from Discord CDN as blob:', error);
-                        // Fallback: Try a different approach with modified URL
-                        const modifiedUrl = url + (url.includes('?') ? '&' : '?') + 'download=true';
-                        
-                        const a = document.createElement('a');
-                        a.href = modifiedUrl;
-                        a.target = '_blank';
-                        a.rel = 'noopener noreferrer';
-                        
-                        // Show notification to user with clear instructions
-                        if (window.ErrorHandler) {
-                            ErrorHandler.showNotification('Image opened in new tab. Use Ctrl+S or right-click to save.', 'info');
-                        }
-                        
-                        // Trigger the action
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                    });
-                
-                return true;
-            } else {
-                // For non-Discord URLs, use the standard download approach
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = filename || 'discord-image.png';
-                a.target = '_blank';
-                
-                // Log the anchor element for debugging
-                console.log('Anchor element created:', a);
-                
-                // Append to body, click, and remove
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                
-                console.log('Download triggered successfully:', filename);
-                return true;
+
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
             }
+
+            const blob = await response.blob();
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = filename || 'discord-image.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(blobUrl);
+
+            console.log('Download triggered successfully:', filename);
+            if (window.ErrorHandler) {
+                ErrorHandler.showNotification('Download started!', 'success');
+            }
+            return true;
         } catch (error) {
             console.error('Failed to trigger download:', error);
-            // Final fallback
-            try {
-                window.open(url, '_blank');
-                if (window.ErrorHandler) {
-                    ErrorHandler.showNotification('Image opened in new tab. Use Ctrl+S or right-click to save.', 'info');
-                }
-                return false;
-            } catch (fallbackError) {
-                console.error('All download methods failed:', fallbackError);
-                if (window.ErrorHandler) {
-                    ErrorHandler.showNotification('Unable to process download. Please try again.', 'error');
-                }
-                return false;
+            if (window.ErrorHandler) {
+                ErrorHandler.showNotification('Failed to download image. Please try again.', 'error');
             }
+            return false;
         }
     }
 
@@ -1550,6 +1514,7 @@ class App {
         try {
             // Initialize core components
             this.themeManager = new ThemeManager();
+            this.languageManager = new LanguageManager();
             this.mobileMenuManager = new MobileMenuManager();
             this.searchManager = new SearchManager();
             this.filterManager = new FilterManager();
@@ -1558,6 +1523,7 @@ class App {
 
             // Make managers globally available
             window.themeManager = this.themeManager;
+            window.languageManager = this.languageManager;
             window.mobileMenuManager = this.mobileMenuManager;
             window.searchManager = this.searchManager;
             window.filterManager = this.filterManager;

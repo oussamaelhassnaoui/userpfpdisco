@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#5865f2">
+    <title>Visionneuse Discord PFP</title>
+    <meta name="description" content="Téléchargez gratuitement les avatars et photos de profil Discord. Trouvez les profils Discord par ID avec notre outil de recherche Discord PFP. Téléchargez des avatars, photos de profil et bannières Discord de haute qualité instantanément. Recherchez un profil Discord par ID utilisateur.">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.discordapp.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://discordlookup.mesalytic.moe">
+    <link rel="dns-prefetch" href="https://japi.rest">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style" crossorigin="anonymous">
+    <link rel="preload" href="script.js" as="script" crossorigin="anonymous">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="pfpdicor.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="pfpdicor.svg">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="discord id, recherche discord, recherche d'id discord, recherche d'utilisateur discord, discord user search, visionneuse de profil discord, téléchargement d'avatar discord, téléchargement de bannière discord, trouver un utilisateur discord, discord user finder, discord pfp, photo de profil discord, recherche de nom d'utilisateur discord, informations utilisateur discord">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Outil de recherche d'ID Discord">
+    <link rel="canonical" href="https://pfpsaver.com/index-fr.html">
+    <link rel="alternate" hreflang="en" href="https://pfpsaver.com/">
+    <link rel="alternate" hreflang="fr" href="https://pfpsaver.com/index-fr.html">
+    <link rel="alternate" hreflang="de" href="https://pfpsaver.com/index-de.html">
+    <link rel="alternate" hreflang="es" href="https://pfpsaver.com/index-es.html">
+    <link rel="alternate" hreflang="ar" href="https://pfpsaver.com/index-ar.html">
+    <link rel="alternate" hreflang="zh" href="https://pfpsaver.com/index-zh.html">
+    <link rel="alternate" hreflang="it" href="https://pfpsaver.com/index-it.html">
+    <link rel="alternate" hreflang="ko" href="https://pfpsaver.com/index-ko.html">
+    <link rel="alternate" hreflang="pl" href="https://pfpsaver.com/index-pl.html">
+    <link rel="alternate" hreflang="uk" href="https://pfpsaver.com/index-uk.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Téléchargeur d'avatar et de photo de profil Discord - Recherche Discord PFP">
+    <meta property="og:description" content="Téléchargez gratuitement les avatars et photos de profil Discord. Trouvez les profils Discord par ID et téléchargez des avatars et bannières de haute qualité instantanément.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pfpsaver.com/index-fr.html">
+    <meta property="og:image" content="https://pfpsaver.com/pfpdicor.svg">
+    <meta property="og:site_name" content="Recherche d'ID Discord">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourhandle">
+    <meta name="twitter:title" content="Téléchargeur d'avatar et de photo de profil Discord - Recherche Discord PFP">
+    <meta name="twitter:description" content="Trouvez instantanément les profils Discord par ID et téléchargez des avatars et photos de profil de haute qualité. Outil de recherche Discord PFP gratuit.">
+    <meta name="twitter:image" content="https://pfpsaver.com/pfpdicor.svg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#5865f2">
+    <meta name="msapplication-TileColor" content="#5865f2">
+    <meta name="application-name" content="Recherche d'ID Discord">
+    <meta name="apple-mobile-web-app-title" content="Recherche d'ID Discord">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Téléchargeur d'avatar et de photo de profil Discord",
+      "description": "Téléchargez gratuitement les avatars et photos de profil Discord. Trouvez les profils Discord par ID avec notre outil de recherche Discord PFP. Téléchargez des avatars, photos de profil et bannières Discord de haute qualité instantanément.",
+      "url": "https://pfpsaver.com/index-fr.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Recherche Discord PFP"
+      },
+      "featureList": [
+        "Recherche de profil Discord par ID",
+        "Visionneuse de profil Discord",
+        "Téléchargement d'avatar Discord",
+        "Téléchargement de bannière Discord"
+      ],
+      "keywords": "avatar discord, profil discord, discord pfp, profil discord, id discord, recherche discord pfp, téléchargement d'avatar discord, photo de profil discord"
+    }
+    </script>
+    <!-- Additional Schema for FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Comment trouver un ID utilisateur Discord pour la recherche ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour trouver un ID utilisateur Discord pour notre outil de recherche Discord, activez le mode développeur dans les paramètres Discord, puis faites un clic droit sur n'importe quel utilisateur et sélectionnez 'Copier l'ID utilisateur'. Utilisez cet ID dans notre outil de recherche d'utilisateurs Discord."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Le service de recherche d'ID Discord est-il gratuit ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui ! Nos services de recherche d'utilisateur Discord et de recherche d'utilisateur Discord sont complètement gratuits. Vous pouvez effectuer des recherches d'ID Discord illimitées sans aucun coût."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Puis-je télécharger des avatars Discord en utilisant cet outil ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolument ! Notre outil de recherche Discord vous permet de télécharger des avatars et bannières Discord dans la plus haute qualité disponible, y compris les photos de profil Discord animées."
+        }
+      }]
+    }
+    </script>
+    <!-- WebSite Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Visionneuse Discord PFP",
+      "url": "https://pfpsaver.com/index-fr.html"
+    }
+    </script>
+     <script type="text/javascript">
+    (function() {
+    window.__insp = window.__insp || [];
+    __insp.push(['wid', 1327617955]);
+    var ldinsp = function(){
+    if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=1327617955&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+    setTimeout(ldinsp, 0);
+    })();
+    </script>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    
+    
+    <!-- Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- Logo and Brand -->
+            <div class="brand">
+                <a href="/index-fr.html" class="logo" aria-label="Accueil de la visionneuse de profil Discord">
+                    <span class="logo-icon">💜</span>
+                    <span class="logo-text">Avis de non-responsabilité : Notre site web <u>n'est pas affilié</u> à Discord Inc</span>
+                </a>
+            </div>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <select id="language-selector" aria-label="Sélectionner la langue">
+                        <option value="en">English</option>
+                        <option value="fr" selected>Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                        <option value="zh">中文</option>
+                        <option value="it">Italiano</option>
+                        <option value="ko">한국어</option>
+                        <option value="pl">Polski</option>
+                        <option value="uk">Українська</option>
+                    </select>
+                </div>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Basculer entre le thème sombre/clair">
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C13.029 15.75 9 11.721 9 6.75A9.718 9.718 0 0 1 9.748 2.248A10.003 10.003 0 0 0 2 12C2 17.523 6.477 22 12 22A10.003 10.003 0 0 0 21.752 15.002Z" fill="currentColor"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.071 4.929L17.657 6.343M6.343 17.657L4.929 19.071M19.071 19.071L17.657 17.657M6.343 6.343L4.929 4.929M16 12C16 14.209 14.209 16 12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <div class="container">
+            <div class="main-content-wrapper">
+            <!-- Hero Section -->
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero-logo">
+                    <img src="pfpdicor.svg" width="40" height="40" loading="lazy" alt="Logo du téléchargeur d'avatar et de photo de profil Discord">
+                </div>
+                <h1 id="hero-title" class="hero-title">
+                 Téléchargeur d'avatar et de photo de profil Discord
+                </h1>
+                <p class="hero-description">
+                    Trouvez et téléchargez les avatars et photos de profil Discord par ID utilisateur avec notre outil de recherche Discord PFP
+                </p>
+            </section>
+            
+            <!-- Discord PFP Viewer Section -->
+            <section class="discord-pfp-viewer" aria-labelledby="discord-section-title">
+                <div class="discord-section-header">
+                    <h2 id="discord-section-title" class="section-title">
+                        <span class="discord-icon">💬</span>
+                        Recherche Discord PFP & Visionneuse de profil
+                    </h2>
+                    
+                </div>
+                
+                <div class="discord-search-container">
+                    <div class="discord-search-form">
+                        <div class="discord-input-group">
+                            <label for="discord-user-id" class="discord-label">ID utilisateur/robot Discord (Pas le nom d'utilisateur) :</label>
+                            <div class="discord-input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="discord-user-id" 
+                                    class="discord-input" 
+                                    placeholder="Entrez l'ID utilisateur Discord (ex., 123456789012345678)"
+                                    pattern="[0-9]{17,19}"
+                                    title="L'ID utilisateur Discord doit comporter 17 à 19 chiffres pour la recherche Discord"
+                                    aria-describedby="discord-help-text"
+                                    aria-label="ID utilisateur Discord pour la recherche de profil"
+                                >
+                                <button class="discord-search-btn" id="discord-search-btn" type="button" aria-label="Rechercher un utilisateur Discord par ID">
+                                    <svg class="discord-search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M21 21L15.515 15.515M15.515 15.515A7.5 7.5 0 1 0 4.515 4.515A7.5 7.5 0 0 0 15.515 15.515Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Recherche Discord
+                                </button>
+                            </div>
+                            <small id="discord-help-text" class="discord-help-text">
+                                Utilisez notre outil de recherche d'ID Discord : Clic droit sur un utilisateur Discord → Copier l'ID utilisateur (le mode développeur doit être activé)
+                                <button class="discord-help-toggle" id="discord-help-toggle">Besoin d'aide pour la recherche Discord ?</button>
+                            </small>
+                        </div>
+                    </div>
+                    
+                    <!-- Discord PFP Results -->
+                    <div class="discord-results" id="discord-results" style="display: none;">
+                        <div class="discord-user-card">
+                            <div class="discord-avatar-container">
+                                <img id="discord-avatar" class="discord-avatar" src="" alt="Avatar Discord" loading="lazy">
+                                <div class="discord-avatar-overlay">
+                                    <button class="discord-preview-btn" id="discord-preview-btn" aria-label="Aperçu de l'avatar">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="discord-user-info">
+                                <h3 id="discord-username" class="discord-username">Chargement...</h3>
+                                <p id="discord-user-id-display" class="discord-user-id-display"></p>
+                                <p id="discord-creation-date" class="discord-creation-date"></p>
+                                <div class="discord-user-badges" id="discord-user-badges"></div>
+                            </div>
+                            
+                            <div class="discord-download-options">
+                                <div class="download-section">
+                                    <h4 class="download-section-title">🖼️ Photo de profil</h4>
+                                    <div class="download-controls">
+                                        <div class="discord-format-selector">
+                                            <label for="avatar-format" class="discord-format-label">Format :</label>
+                                            <select id="avatar-format" class="discord-format-select">
+                                                <option value="png" selected>PNG (Qualité la plus élevée)</option>
+                                                <option value="jpg">JPG</option>
+                                                <option value="webp">WebP</option>
+                                                <option value="gif">GIF (si animé)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="discord-download-btn primary" id="discord-download-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Télécharger la photo de profil
+                                    </button>
+                                </div>
+                                
+                                <div class="download-section banner-section" id="banner-download-section" style="display: none;">
+                                    <h4 class="download-section-title">🌆 Bannière de profil</h4>
+                                    <p class="banner-info">Bannière de haute qualité (1024x1024)</p>
+                                    
+                                    <button class="discord-download-btn secondary" id="discord-banner-download-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Télécharger la bannière
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Discord Banner Display in User Card -->
+                            <div class="discord-banner-card-section" id="discord-banner-card-section" style="display: none; margin: 20px 0;">
+                                <h4 class="discord-banner-title">Bannière de profil</h4>
+                                <div class="discord-banner-card-container">
+                                    <img id="discord-banner-card" class="discord-banner-card" src="" alt="Bannière Discord" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
+                                    <div class="discord-banner-card-overlay">
+                                        <button class="discord-preview-btn" id="discord-banner-card-preview-btn" aria-label="Aperçu de la bannière">
+                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="discord-download-btn secondary" id="discord-banner-card-download-btn" style="margin-top: 10px; width: 100%;">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Télécharger la bannière
+                                </button>
+                            </div>
+                            
+                            <!-- Discord Banner Display -->
+                            <div class="discord-banner-section" id="discord-banner-section" style="display: none;">
+                                <h4 class="discord-banner-title">Bannière de profil</h4>
+                                <div class="discord-banner-container">
+                                    <img id="discord-banner" class="discord-banner" src="" alt="Bannière Discord">
+                                    <div class="discord-banner-placeholder" id="discord-banner-placeholder" style="display: none; padding: var(--space-xl); text-align: center; color: var(--color-text-tertiary);">
+                                        <p>Chargement de la bannière<span class="loading-dots"></span></p>
+                                    </div>
+                                    <div class="discord-banner-actions">
+                                        <button class="discord-banner-preview-btn" id="discord-banner-preview-btn">
+                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                                                <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
+                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                            Aperçu
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Help Section -->
+                    <div class="discord-help-section" id="discord-help-section" style="display: none;">
+                        <div class="help-card">
+                            <h4 class="help-title" id="help-message">📋 Comment obtenir l'ID utilisateur Discord</h4>
+                            <div class="help-steps">
+                                <div class="help-step">
+                                    
+                                </div>
+                                <div class="help-step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h5>Clic droit sur l'utilisateur</h5>
+                                        <p>Clic droit sur l'avatar ou le nom d'utilisateur de n'importe quel utilisateur</p>
+                                    </div>
+                                </div>
+                                <div class="help-step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h5>Copier l'ID utilisateur</h5>
+                                        <p>Cliquez sur "Copier l'ID utilisateur" dans le menu contextuel</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="help-examples">
+                                <h5>Exemples d'ID utilisateur à essayer :</h5>
+                                <div class="example-ids">
+                                    <button class="example-id-btn" data-id="235088799074484224">235088799074484224</button>
+                                    <button class="example-id-btn" data-id="155149108183695360">155149108183695360</button>
+                                    <button class="example-id-btn" data-id="432610292342587392">432610292342587392</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual Guide Section -->
+                    <div class="discord-help-section" style="margin-top: 20px;">
+                        <div class="help-card">
+                            <h4 class="help-title">🖼️ Guide visuel : Comment obtenir votre ID Discord</h4>
+                            <div class="visual-guide-steps">
+                                <div class="visual-guide-step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        
+                                        <img src="pfpsaver1.gif" alt="Activation du mode développeur dans Discord">
+                                    </div>
+                                </div>
+                                <div class="visual-guide-step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        
+                                        <img src="pfpsaver2.gif" alt="Copie de l'ID utilisateur depuis Discord">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="help-tips">
+                                <h5>💡 Conseils pro :</h5>
+                                <ul>
+                                    <li>Vous pouvez également copier votre propre ID en allant dans Paramètres utilisateur → Mon compte → Cliquez sur les trois points à côté de votre nom d'utilisateur</li>
+                                    <li>Les ID de robots peuvent être trouvés de la même manière en faisant un clic droit sur les robots dans les serveurs</li>
+                                    <li>Assurez-vous que le mode développeur est activé avant d'essayer de copier des ID</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Discord Loading State -->
+                    <div class="discord-loading" id="discord-loading" style="display: none;">
+                        <p class="loading-text">Récupération du profil Discord<span class="loading-dots"></span></p>
+                    </div>
+                    
+                    <!-- Discord Error State -->
+                    <div class="discord-error" id="discord-error" style="display: none;">
+                        <div class="error-icon">⚠️</div>
+                        <h3 class="error-title">Échec de la récupération du profil</h3>
+                        <p class="error-message" id="discord-error-message">Veuillez vérifier l'ID utilisateur et réessayer.</p>
+                        <button class="error-retry-btn" id="discord-retry-btn">Réessayer</button>
+                    </div>
+                </div>
+            </section>
+            </div>
+            
+            <!-- SEO Content Section -->
+            <section class="seo-content" aria-labelledby="seo-content-title">
+                <div class="seo-content-wrapper">
+                    <h2 id="seo-content-title" class="seo-title">Téléchargeur d'avatar et de photo de profil Discord - Trouver et télécharger Discord PFP par ID</h2>
+                    
+                    <div class="seo-grid">
+                        <div class="seo-card">
+                            <h3>Qu'est-ce que la recherche Discord PFP ?</h3>
+                            <p>La recherche Discord PFP est un service gratuit qui vous permet de rechercher des profils Discord en utilisant leur ID utilisateur Discord unique. Notre téléchargeur d'avatars et de photos de profil Discord vous aide à trouver des profils Discord, à afficher les informations utilisateur et à télécharger des avatars et bannières Discord de haute qualité instantanément.</p>
+                        </div>
+                        
+                        <div class="seo-card">
+                            <h3>Comment trouver les avatars et photos de profil Discord</h3>
+                            <p>Entrez simplement un ID utilisateur Discord (17-19 chiffres) dans notre outil de recherche Discord PFP. Notre visionneuse de profil Discord trouvera instantanément le profil Discord et affichera l'avatar de l'utilisateur, la bannière, la date de création et d'autres informations publiques. Téléchargez les avatars et photos de profil Discord en haute qualité.</p>
+                        </div>
+                        
+                        <div class="seo-card">
+                            <h3>Fonctionnalités de téléchargement d'avatar et de photo de profil Discord</h3>
+                            <ul>
+                                <li>Service de recherche Discord PFP gratuit</li>
+                                <li>Recherche de profil Discord par ID</li>
+                                <li>Télécharger les avatars et photos de profil Discord en haute qualité</li>
+                                <li>Télécharger les bannières Discord (si disponibles)</li>
+                                <li>Afficher la date de création de l'utilisateur Discord</li>
+                                <li>Prise en charge des photos de profil Discord animées</li>
+                                <li>Visionneuse de profil Discord avec informations détaillées</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="seo-faq">
+                        <h3>Questions fréquemment posées sur les avatars et photos de profil Discord</h3>
+                        <div class="faq-item">
+                            <h4>Comment trouver un ID utilisateur Discord pour la recherche Discord PFP ?</h4>
+                            <p>Pour trouver un ID utilisateur Discord pour notre téléchargeur d'avatars Discord, activez le mode développeur dans les paramètres Discord, puis faites un clic droit sur n'importe quel utilisateur et sélectionnez "Copier l'ID utilisateur". Utilisez cet ID dans notre outil de recherche de profil Discord pour afficher et télécharger des photos de profil et des avatars.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Le service de recherche Discord PFP est-il gratuit pour trouver des photos de profil et des avatars ?</h4>
+                            <p>Oui ! Nos services de téléchargeur d'avatars et de photos de profil Discord sont complètement gratuits. Vous pouvez effectuer des recherches d'ID Discord illimitées pour trouver un profil Discord et télécharger des avatars et des photos de profil sans aucun coût.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Puis-je télécharger des avatars et des photos de profil Discord en utilisant cet outil de recherche Discord PFP ?</h4>
+                            <p>Absolument ! Notre téléchargeur d'avatars Discord vous permet de télécharger des photos de profil et des bannières Discord dans la plus haute qualité disponible, y compris les avatars Discord animés. Recherchez simplement un profil Discord par ID et téléchargez leur avatar et leur photo de profil.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Quelle est la qualité des avatars et photos de profil Discord téléchargés ?</h4>
+                            <p>Lorsque vous utilisez notre outil de recherche Discord PFP pour télécharger des avatars et des photos de profil, vous obtenez la plus haute qualité disponible. Les avatars Discord personnalisés peuvent être téléchargés jusqu'à une résolution de 4096x4096, tandis que les photos de profil par défaut sont disponibles jusqu'à 1024x1024. Les bannières Discord sont téléchargées dans la plus haute qualité disponible.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Puis-je trouver des avatars et photos de profil Discord animés ?</h4>
+                            <p>Oui, notre outil de recherche Discord PFP prend entièrement en charge les photos de profil animées (format GIF). Si un utilisateur a un avatar Discord animé, vous verrez un badge "ANIMÉ" et pourrez le télécharger au format GIF en pleine qualité.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seo-content-extra">
+                        <h3>À propos des avatars et photos de profil Discord</h3>
+                        <p>Les avatars et photos de profil Discord font partie intégrante de l'identité utilisateur sur la plateforme Discord. Avec notre outil de recherche Discord PFP, vous pouvez facilement trouver un profil Discord et télécharger des avatars de haute qualité de n'importe quel utilisateur Discord. Que vous cherchiez de l'inspiration pour votre propre profil ou que vous souhaitiez enregistrer un avatar Discord favori, notre outil le rend simple et rapide.</p>
+                        
+                        <h3>Usages populaires des avatars et photos de profil Discord</h3>
+                        <p>Notre téléchargeur d'avatars Discord est utilisé par des milliers d'utilisateurs Discord chaque jour pour diverses raisons. Parmi les usages les plus courants, on trouve la recherche de photos de profil pour la modération de serveurs Discord, la vérification des identités d'utilisateurs, le téléchargement d'avatars pour des collections personnelles et la recherche d'inspiration pour des designs de profil Discord personnalisés.</p>
+                        
+                        <h3>Qualité des avatars et photos de profil Discord</h3>
+                        <p>Lorsque vous utilisez notre outil de recherche Discord PFP pour télécharger des avatars et des photos de profil, vous obtenez la plus haute qualité disponible. Les avatars Discord personnalisés peuvent être téléchargés jusqu'à une résolution de 4096x4096, tandis que les photos de profil par défaut sont disponibles en 1024x1024. Les bannières Discord sont également téléchargées dans la qualité maximale pour une expérience de visualisation optimale.</p>
+                    </div>
+                </div>
+            </section>
+            
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Téléchargeur d'avatar et de photo de profil Discord</h3>
+                    <p class="footer-description">
+                        Service de recherche Discord PFP et recherche de profil Discord gratuit. Trouvez des utilisateurs Discord, affichez des profils et téléchargez des avatars et photos de profil de haute qualité. Visionneuse de profil Discord instantanée.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Outils de profil Discord</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" title="Recherche Discord PFP">Recherche Discord PFP</a></li>
+                        <li><a href="#" title="Trouver un profil Discord">Trouver un profil Discord</a></li>
+                        <li><a href="#" title="Télécharger l'avatar Discord">Télécharger l'avatar Discord</a></li>
+                        <li><a href="#" title="Téléchargement de bannière Discord">Téléchargement de bannière Discord</a></li>
+                        <li><a href="#" title="Visionneuse de profil Discord">Visionneuse de profil Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">À propos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Outil de recherche d'ID Discord - Service de recherche d'utilisateur Discord gratuit. Non affilié à Discord, Inc.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Image Preview Modal -->
+    <div class="modal" id="image-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" class="modal-title">Aperçu de l'image</h2>
+                <button class="modal-close" id="modal-close" aria-label="Fermer la modale">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-image" class="modal-image" src="" alt="">
+                </div>
+                
+                <div class="modal-info">
+                    <h3 id="modal-image-title" class="modal-image-title"></h3>
+                    <p id="modal-image-category" class="modal-image-category"></p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="download-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Télécharger
+                        </button>
+                        <button class="btn btn-secondary" id="share-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 5.18885 15.0133 5.37442 15.0387 5.55624L8.56815 9.24695C8.01119 8.46217 7.08205 7.96094 6.03077 7.96094C4.25769 7.96094 2.82031 9.39832 2.82031 11.1714C2.82031 12.9445 4.25769 14.3819 6.03077 14.3819C7.08205 14.3819 8.01119 13.8806 8.56815 13.0959L15.0387 16.7866C15.0133 16.9684 15 17.154 15 17.3428C15 19.0159 16.4374 20.4533 18.2105 20.4533C19.9836 20.4533 21.421 19.0159 21.421 17.3428C21.421 15.6697 19.9836 14.2323 18.2105 14.2323C17.1592 14.2323 16.2301 14.7336 15.673 15.5183L9.20248 11.8276C9.22789 11.6458 9.24123 11.4602 9.24123 11.2714C9.24123 11.0826 9.22789 10.897 9.20248 10.7152L15.673 7.02449C16.2301 7.80927 17.1592 8.31051 18.2105 8.31051Z" fill="currentColor"/>
+                            </svg>
+                            Partager
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
