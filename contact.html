@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#5865f2">
+    <title>Contact Us - Discord PFP Viewer</title>
+    <meta name="description" content="Contact the Discord PFP Viewer team for support, feedback, or inquiries about our Discord profile picture lookup service.">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.discordapp.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="pfpdicor.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="pfpdicor.svg">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="contact us, discord pfp viewer, discord avatar downloader, discord profile lookup, support, feedback">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Discord ID Lookup Tool">
+    <link rel="canonical" href="https://pfpsaver.com/contact.html">
+    <link rel="alternate" hreflang="en" href="https://pfpsaver.com/contact.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Us - Discord PFP Viewer">
+    <meta property="og:description" content="Contact the Discord PFP Viewer team for support, feedback, or inquiries about our Discord profile picture lookup service.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pfpsaver.com/contact.html">
+    <meta property="og:image" content="https://pfpsaver.com/pfpdicor.svg">
+    <meta property="og:site_name" content="Discord ID Lookup">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - Discord PFP Viewer">
+    <meta name="twitter:description" content="Contact the Discord PFP Viewer team for support, feedback, or inquiries about our Discord profile picture lookup service.">
+    <meta name="twitter:image" content="https://pfpsaver.com/pfpdicor.svg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#5865f2">
+    <meta name="msapplication-TileColor" content="#5865f2">
+    <meta name="application-name" content="Discord ID Lookup">
+    <meta name="apple-mobile-web-app-title" content="Discord ID Lookup">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Contact Us - Discord PFP Viewer",
+      "description": "Contact the Discord PFP Viewer team for support, feedback, or inquiries about our Discord profile picture lookup service.",
+      "url": "https://pfpsaver.com/contact.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://pfpsaver.com/"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://pfpsaver.com/contact.html"
+        }]
+      }
+    }
+    </script>
+    
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border-primary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--color-border-secondary);
+            border-radius: var(--border-radius-md);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            font-size: var(--font-size-base);
+            font-family: inherit;
+            transition: all var(--transition-fast);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: #5865f2;
+            box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #5865f2, #4752c4);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .form-button:hover {
+            background: linear-gradient(135deg, #4752c4, #3c4692);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-method {
+            flex: 1;
+            min-width: 200px;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border-primary);
+            text-align: center;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-method h4 {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-primary);
+        }
+        
+        .contact-method p {
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-section {
+            margin-top: 3rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border-primary);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-answer {
+            color: var(--color-text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 1rem;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- Logo and Brand -->
+            <div class="brand">
+                <a href="/" class="logo" aria-label="Discord Profile Viewer Home">
+                    <span class="logo-icon">💜</span>
+                    <span class="logo-text">Disclaimer: Our website is <u>not affiliated</u> with Discord Inc</span>
+                </a>
+            </div>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="en" selected>English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C13.029 15.75 9 11.721 9 6.75A9.718 9.718 0 0 1 9.748 2.248A10.003 10.003 0 0 0 2 12C2 17.523 6.477 22 12 22A10.003 10.003 0 0 0 21.752 15.002Z" fill="currentColor"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.071 4.929L17.657 6.343M6.343 17.657L4.929 19.071M19.071 19.071L17.657 17.657M6.343 6.343L4.929 4.929M16 12C16 14.209 14.209 16 12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <div class="container">
+            <div class="main-content-wrapper">
+                <!-- Hero Section -->
+                <section class="hero" aria-labelledby="hero-title">
+                    <div class="hero-logo">
+                        <img src="pfpdicor.svg" width="40" height="40" loading="lazy" alt="Discord Avatar & Profile Picture Downloader Logo">
+                    </div>
+                    <h1 id="hero-title" class="hero-title">
+                        Contact Us
+                    </h1>
+                    <p class="hero-description">
+                        Have questions or feedback? We're here to help!
+                    </p>
+                </section>
+                
+                <!-- Contact Content -->
+                <section class="seo-content" aria-labelledby="contact-title">
+                    <div class="seo-content-wrapper">
+                        <h2 id="contact-title" class="seo-title">Get in Touch</h2>
+                        
+                        <div class="contact-info">
+                            <p>We value your feedback and are here to assist you with any questions or concerns about our Discord PFP Viewer service.</p>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">📧</div>
+                                <h4>Email Support</h4>
+                                <p>For general inquiries and support</p>
+                                <p><strong>support@pfpsaver.com</strong></p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">🐛</div>
+                                <h4>Bug Reports</h4>
+                                <p>Report issues or bugs</p>
+                                <p><strong>bugs@pfpsaver.com</strong></p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">💡</div>
+                                <h4>Feedback</h4>
+                                <p>Share your ideas and suggestions</p>
+                                <p><strong>feedback@pfpsaver.com</strong></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Form -->
+                        <div class="contact-form">
+                            <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--color-text-primary);">Send us a Message</h3>
+                            <form id="contactForm" name="submit-to-google-sheet">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" id="name" name="Name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" name="Email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <select id="subject" name="Subject" class="form-select" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="support">Support Request</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="bug">Bug Report</option>
+                                        <option value="feature">Feature Request</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" name="Message" class="form-textarea" placeholder="Please provide as much detail as possible..." required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="form-button" id="submitBtn">
+                                    <span>Send Message</span>
+                                </button>
+                            </form>
+                            <span id="msg"></span>
+                        </div>
+                        
+                        <!-- FAQ Section -->
+                        <div class="faq-section">
+                            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--color-text-primary);">Frequently Asked Questions</h3>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">How do I find a Discord User ID?</div>
+                                <div class="faq-answer">
+                                    <p>To find a Discord User ID:</p>
+                                    <ol>
+                                        <li>Enable Developer Mode in Discord Settings (User Settings → Advanced → Developer Mode)</li>
+                                        <li>Right-click on any user's profile or username</li>
+                                        <li>Select "Copy User ID" from the context menu</li>
+                                    </ol>
+                                    <p>User IDs are 17-19 digit numbers that uniquely identify Discord accounts.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Why can't I download some avatars or banners?</div>
+                                <div class="faq-answer">
+                                    <p>There are several reasons why you might not be able to download certain media:</p>
+                                    <ul>
+                                        <li>The user has deleted their account</li>
+                                        <li>The user has changed their avatar/banners recently and the CDN cache is updating</li>
+                                        <li>The user has a default avatar (which has limited resolution)</li>
+                                        <li>Discord's CDN is temporarily unavailable</li>
+                                    </ul>
+                                    <p>If the issue persists, please contact our support team.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Is this service free to use?</div>
+                                <div class="faq-answer">
+                                    <p>Yes, our Discord PFP Viewer service is completely free to use. We do not charge any fees for accessing or downloading Discord profile pictures and banners. We may display advertisements to support the service, but all core features remain free.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Is this service affiliated with Discord Inc.?</div>
+                                <div class="faq-answer">
+                                    <p>No, our service is not affiliated with, endorsed by, or sponsored by Discord Inc. We are an independent service that uses Discord's public APIs and CDN to provide profile picture viewing and downloading capabilities. All trademarks and copyrights belong to their respective owners.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Discord Avatar & Profile Picture Downloader</h3>
+                    <p class="footer-description">
+                        Free Discord PFP lookup and profile Discord search tool. Find Discord users, view profiles, and download high-quality avatars and profile pictures. Instant Discord profile viewer.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Discord Profile Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" title="Discord PFP Lookup">Discord PFP Lookup</a></li>
+                        <li><a href="/" title="Find Discord Profile">Find Discord Profile</a></li>
+                        <li><a href="/" title="Download Discord Avatar">Download Discord Avatar</a></li>
+                        <li><a href="/" title="Discord Banner Download">Discord Banner Download</a></li>
+                        <li><a href="/" title="Discord Profile Viewer">Discord Profile Viewer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">About</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Discord ID Lookup Tool - Free Discord User Search Service. Not affiliated with Discord, Inc.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Google Sheets Form Submission
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwN_6zKMLoCbNmN608hHrL43ARDg8Iu4C-9dURsRRuIwAzA6_ar2Mfg7wc6NyMi2eRN/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+          
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000) 
+                    form.reset()       
+                })
+                .catch(error => {
+                    console.error('Error!', error.message)
+                    msg.innerHTML = "Error sending message. Please try again."
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000)
+                })
+        })
+    </script>
+</body>
+</html>

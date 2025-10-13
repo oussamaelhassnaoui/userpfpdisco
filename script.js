@@ -1657,3 +1657,120 @@ window.checkDiscordButtons = function() {
 // Start the application
 console.log('Starting app');
 const app = new App();
+
+// Language detection and redirection
+(function() {
+    // Function to detect user's preferred language
+    function detectLanguage() {
+        // Check if user has already selected a language
+        const savedLanguage = localStorage.getItem('preferredLanguage');
+        if (savedLanguage) {
+            return savedLanguage;
+        }
+        
+        // Get browser's preferred languages
+        const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
+        
+        // Check for supported languages in order of preference
+        for (let lang of browserLanguages) {
+            // Handle language codes like "en-US", "fr-FR", etc.
+            const primaryLang = lang.split('-')[0].toLowerCase();
+            
+            // Supported languages
+            const supportedLanguages = {
+                'en': 'en',
+                'fr': 'fr',
+                'de': 'de',
+                'es': 'es',
+                'ar': 'ar'
+            };
+            
+            if (supportedLanguages[primaryLang]) {
+                return supportedLanguages[primaryLang];
+            }
+        }
+        
+        // Default to English if no supported language is found
+        return 'en';
+    }
+    
+    // Function to redirect to the appropriate language page
+    function redirectToLanguagePage() {
+        const currentPath = window.location.pathname;
+        const detectedLanguage = detectLanguage();
+        
+        // If we're on the main page and the detected language is not English
+        if ((currentPath === '/' || currentPath === '/index.html') && detectedLanguage !== 'en') {
+            const languagePages = {
+                'fr': '/index-fr.html',
+                'de': '/index-de.html',
+                'es': '/index-es.html',
+                'ar': '/index-ar.html'
+            };
+            
+            if (languagePages[detectedLanguage]) {
+                // Save the preferred language
+                localStorage.setItem('preferredLanguage', detectedLanguage);
+                
+                // Redirect to the language-specific page
+                window.location.href = languagePages[detectedLanguage];
+            }
+        }
+    }
+    
+    // Run the language detection on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', redirectToLanguagePage);
+    } else {
+        redirectToLanguagePage();
+    }
+})();
+
+// Language selector functionality
+(function() {
+    function initLanguageSelector() {
+        const languageSelector = document.getElementById('language-selector');
+        if (!languageSelector) return;
+        
+        // Set the selected language based on current page
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('index-fr.html')) {
+            languageSelector.value = 'fr';
+        } else if (currentPath.includes('index-de.html')) {
+            languageSelector.value = 'de';
+        } else if (currentPath.includes('index-es.html')) {
+            languageSelector.value = 'es';
+        } else if (currentPath.includes('index-ar.html')) {
+            languageSelector.value = 'ar';
+        } else {
+            languageSelector.value = 'en';
+        }
+        
+        // Handle language change
+        languageSelector.addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            const languagePages = {
+                'en': '/',
+                'fr': '/index-fr.html',
+                'de': '/index-de.html',
+                'es': '/index-es.html',
+                'ar': '/index-ar.html'
+            };
+            
+            if (languagePages[selectedLanguage]) {
+                // Save the preferred language
+                localStorage.setItem('preferredLanguage', selectedLanguage);
+                
+                // Redirect to the language-specific page
+                window.location.href = languagePages[selectedLanguage];
+            }
+        });
+    }
+    
+    // Initialize language selector when DOM is loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLanguageSelector);
+    } else {
+        initLanguageSelector();
+    }
+})();
