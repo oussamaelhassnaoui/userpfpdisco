@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#5865f2">
+    <title>Discord Webhook Sender - Send Messages to Discord Channels</title>
+    <meta name="description" content="Free Discord webhook sender tool. Send messages, images, and embeds to Discord channels with our easy-to-use webhook sender. No installation required.">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdn.discordapp.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="pfpdicor.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="pfpdicor.svg">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="discord webhook sender, discord webhook tool, send discord webhook, discord webhook message, discord webhook image, discord webhook embed">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Discord Webhook Sender Tool">
+    <link rel="canonical" href="https://pfpsaver.com/webhook-sender.html">
+    <link rel="alternate" hreflang="en" href="https://pfpsaver.com/webhook-sender.html">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Discord Webhook Sender - Send Messages to Discord Channels">
+    <meta property="og:description" content="Free Discord webhook sender tool. Send messages, images, and embeds to Discord channels with our easy-to-use webhook sender. No installation required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pfpsaver.com/webhook-sender.html">
+    <meta property="og:image" content="https://pfpsaver.com/pfpdicor.svg">
+    <meta property="og:site_name" content="Discord Webhook Sender">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Discord Webhook Sender - Send Messages to Discord Channels">
+    <meta name="twitter:description" content="Free Discord webhook sender tool. Send messages, images, and embeds to Discord channels with our easy-to-use webhook sender. No installation required.">
+    <meta name="twitter:image" content="https://pfpsaver.com/pfpdicor.svg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#5865f2">
+    <meta name="msapplication-TileColor" content="#5865f2">
+    <meta name="application-name" content="Discord Webhook Sender">
+    <meta name="apple-mobile-web-app-title" content="Discord Webhook Sender">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Discord Webhook Sender - Send Messages to Discord Channels",
+      "description": "Free Discord webhook sender tool. Send messages, images, and embeds to Discord channels with our easy-to-use webhook sender. No installation required.",
+      "url": "https://pfpsaver.com/webhook-sender.html",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Discord Webhook Sender"
+      },
+      "featureList": [
+        "Send messages to Discord channels",
+        "Add images to Discord webhooks",
+        "Customize webhook content",
+        "Easy-to-use webhook sender interface",
+        "Free Discord webhook tool"
+      ],
+      "keywords": "discord webhook sender, discord webhook tool, send discord webhook, discord webhook message, discord webhook image"
+    }
+    </script>
+    
+    <style>
+        .webhook-form {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border-primary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--color-border-secondary);
+            border-radius: var(--border-radius-md);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            font-size: var(--font-size-base);
+            font-family: inherit;
+            transition: all var(--transition-fast);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #5865f2;
+            box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #5865f2, #4752c4);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .form-button:hover {
+            background: linear-gradient(135deg, #4752c4, #3c4692);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-button.secondary {
+            background: var(--color-surface-hover);
+            color: var(--color-text-primary);
+        }
+        
+        .form-button.secondary:hover {
+            background: var(--color-surface-active);
+        }
+        
+        .result-container {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            display: none;
+        }
+        
+        .result-success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--color-success);
+            color: var(--color-success);
+        }
+        
+        .result-error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--color-error);
+            color: var(--color-error);
+        }
+        
+        .example-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border-primary);
+        }
+        
+        .example-section h3 {
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+        
+        .example-code {
+            background: var(--color-bg-secondary);
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .faq-section {
+            margin-top: 3rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border-secondary);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-primary);
+        }
+        
+        .faq-item p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        .webhook-icon {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with Navigation -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- Logo and Brand -->
+            <div class="brand">
+                <a href="/" class="logo" aria-label="Discord Webhook Sender Home">
+                    <span class="logo-icon">💜</span>
+                    <span class="logo-text">Disclaimer: Our website is <u>not affiliated</u> with Discord Inc</span>
+                </a>
+            </div>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <select id="language-selector" aria-label="Select language">
+                        <option value="en" selected>English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C13.029 15.75 9 11.721 9 6.75A9.718 9.718 0 0 1 9.748 2.248A10.003 10.003 0 0 0 2 12C2 17.523 6.477 22 12 22A10.003 10.003 0 0 0 21.752 15.002Z" fill="currentColor"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.071 4.929L17.657 6.343M6.343 17.657L4.929 19.071M19.071 19.071L17.657 17.657M6.343 6.343L4.929 4.929M16 12C16 14.209 14.209 16 12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <div class="container">
+            <div class="main-content-wrapper">
+                <!-- Hero Section -->
+                <section class="hero" aria-labelledby="hero-title">
+                    <div class="hero-logo">
+                        <img src="pfpdicor.svg" width="40" height="40" loading="lazy" alt="Discord Webhook Sender">
+                    </div>
+                    <h1 id="hero-title" class="hero-title">
+                        Discord Webhook Sender
+                    </h1>
+                    <p class="hero-description">
+                        Send messages, images, and embeds to Discord channels with our free webhook sender tool
+                    </p>
+                </section>
+                
+                <!-- Webhook Sender Section -->
+                <section class="discord-pfp-viewer" aria-labelledby="webhook-section-title">
+                    <div class="discord-section-header">
+                        <h2 id="webhook-section-title" class="section-title">
+                            <span class="discord-icon">🔗</span>
+                            Send Messages to Discord Channels
+                        </h2>
+                    </div>
+                    
+                    <div class="webhook-form">
+                        <form id="webhook-form">
+                            <div class="form-group">
+                                <label for="webhook-url" class="form-label">Webhook URL</label>
+                                <input 
+                                    type="url" 
+                                    id="webhook-url" 
+                                    class="form-input" 
+                                    placeholder="https://discord.com/api/webhooks/..."
+                                    required
+                                    aria-describedby="webhook-url-help"
+                                >
+                                <small id="webhook-url-help" class="discord-help-text">
+                                    Paste your Discord webhook URL here. Create one in your server settings.
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message-content" class="form-label">Message Content</label>
+                                <textarea 
+                                    id="message-content" 
+                                    class="form-textarea" 
+                                    placeholder="Enter your message here..."
+                                    maxlength="2000"
+                                    aria-describedby="message-content-help"
+                                ></textarea>
+                                <small id="message-content-help" class="discord-help-text">
+                                    Plain text message (max 2000 characters)
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="image-url" class="form-label">Image URL (Optional)</label>
+                                <input 
+                                    type="url" 
+                                    id="image-url" 
+                                    class="form-input" 
+                                    placeholder="https://example.com/image.png"
+                                    aria-describedby="image-url-help"
+                                >
+                                <small id="image-url-help" class="discord-help-text">
+                                    URL to an image you want to send with your message
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="username" class="form-label">Username (Optional)</label>
+                                <input 
+                                    type="text" 
+                                    id="username" 
+                                    class="form-input" 
+                                    placeholder="Webhook username"
+                                    maxlength="80"
+                                    aria-describedby="username-help"
+                                >
+                                <small id="username-help" class="discord-help-text">
+                                    Custom username for the webhook (max 80 characters)
+                                </small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="avatar-url" class="form-label">Avatar URL (Optional)</label>
+                                <input 
+                                    type="url" 
+                                    id="avatar-url" 
+                                    class="form-input" 
+                                    placeholder="https://example.com/avatar.png"
+                                    aria-describedby="avatar-url-help"
+                                >
+                                <small id="avatar-url-help" class="discord-help-text">
+                                    Custom avatar for the webhook
+                                </small>
+                            </div>
+                            
+                            <button type="submit" class="form-button" id="send-webhook-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 19L19 12M19 12L12 5M19 12L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Send Webhook
+                            </button>
+                            
+                            <button type="button" class="form-button secondary" id="clear-form-btn" style="margin-top: 1rem;">
+                                Clear Form
+                            </button>
+                        </form>
+                        
+                        <div id="result-container" class="result-container">
+                            <p id="result-message"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Example Section -->
+                    <div class="example-section">
+                        <h3>📘 How to Create a Discord Webhook</h3>
+                        <ol>
+                            <li>Go to your Discord server settings</li>
+                            <li>Click on "Integrations" in the left sidebar</li>
+                            <li>Click "Create Webhook"</li>
+                            <li>Customize the webhook name and channel</li>
+                            <li>Click "Copy Webhook URL"</li>
+                            <li>Paste the URL in the form above</li>
+                        </ol>
+                        
+                        <h3 style="margin-top: 1.5rem;">💻 Example Webhook URL</h3>
+                        <div class="example-code">
+                            https://discord.com/api/webhooks/123456789012345678/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="faq-section">
+                        <h3>Frequently Asked Questions</h3>
+                        
+                        <div class="faq-item">
+                            <h4>What is a Discord webhook?</h4>
+                            <p>A Discord webhook is a simple way to send messages to Discord channels without needing to create a bot. They're commonly used for notifications, alerts, and automated messages.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Is this webhook sender free to use?</h4>
+                            <p>Yes! Our Discord webhook sender tool is completely free to use. No registration or payment is required.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Is my webhook URL stored or logged?</h4>
+                            <p>No, we do not store or log your webhook URLs. All data is processed client-side in your browser.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Can I send embeds with this tool?</h4>
+                            <p>This basic version supports sending simple messages with images. For advanced embeds, you would need to use the Discord API directly or a more advanced tool.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- SEO Content Section -->
+            <section class="seo-content" aria-labelledby="seo-content-title">
+                <div class="seo-content-wrapper">
+                    <h2 id="seo-content-title" class="seo-title">Discord Webhook Sender - Send Messages to Discord Channels</h2>
+                    
+                    <div class="seo-grid">
+                        <div class="seo-card">
+                            <h3>What is a Discord Webhook Sender?</h3>
+                            <p>A Discord webhook sender is a tool that allows you to send messages to Discord channels using webhooks. Our free webhook sender makes it easy to send messages, images, and notifications to your Discord servers without needing to create a bot.</p>
+                        </div>
+                        
+                        <div class="seo-card">
+                            <h3>How to Use Our Discord Webhook Tool</h3>
+                            <p>Simply paste your webhook URL, enter your message, add an image URL if desired, and click send. Our Discord webhook sender tool works directly in your browser with no installation required.</p>
+                        </div>
+                        
+                        <div class="seo-card">
+                            <h3>Features of Our Discord Webhook Sender</h3>
+                            <ul>
+                                <li>Free Discord webhook sender</li>
+                                <li>Send messages to Discord channels</li>
+                                <li>Add images to your webhook messages</li>
+                                <li>Customize webhook username and avatar</li>
+                                <li>No registration required</li>
+                                <li>Works in all modern browsers</li>
+                                <li>Client-side processing for privacy</li>
+                                <li>Mobile-friendly interface</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Discord Webhook Sender</h3>
+                    <p class="footer-description">
+                        Free Discord webhook sender tool. Send messages, images, and embeds to Discord channels with our easy-to-use webhook sender. No installation required.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Discord Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" title="Discord PFP Grabber">Discord PFP Grabber</a></li>
+                        <li><a href="/" title="Discord PFP Downloader">Discord PFP Downloader</a></li>
+                        <li><a href="/" title="Discord PFP Viewer">Discord PFP Viewer</a></li>
+                        <li><a href="webhook-sender.html" title="Discord Webhook Sender">Discord Webhook Sender</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">About</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Discord Webhook Sender Tool - Free Discord Webhook Service. Not affiliated with Discord, Inc.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Theme Management
+        class ThemeManager {
+            constructor() {
+                this.currentTheme = localStorage.getItem('theme') || 'dark';
+                this.init();
+            }
+
+            init() {
+                this.setTheme(this.currentTheme);
+                this.bindEvents();
+            }
+
+            setTheme(theme) {
+                this.currentTheme = theme;
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                
+                // Update theme toggle button aria-label
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.setAttribute('aria-label', 
+                        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+                    );
+                }
+            }
+
+            toggleTheme() {
+                const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+                this.setTheme(newTheme);
+            }
+
+            bindEvents() {
+                const themeToggle = document.getElementById('theme-toggle');
+                if (themeToggle) {
+                    themeToggle.addEventListener('click', () => this.toggleTheme());
+                }
+            }
+        }
+
+        // Webhook Sender Functionality
+        class WebhookSender {
+            constructor() {
+                this.form = document.getElementById('webhook-form');
+                this.sendButton = document.getElementById('send-webhook-btn');
+                this.clearButton = document.getElementById('clear-form-btn');
+                this.resultContainer = document.getElementById('result-container');
+                this.resultMessage = document.getElementById('result-message');
+                
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+                this.clearButton.addEventListener('click', () => this.clearForm());
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                const webhookUrl = document.getElementById('webhook-url').value.trim();
+                const messageContent = document.getElementById('message-content').value.trim();
+                const imageUrl = document.getElementById('image-url').value.trim();
+                const username = document.getElementById('username').value.trim();
+                const avatarUrl = document.getElementById('avatar-url').value.trim();
+                
+                // Validate inputs
+                if (!webhookUrl) {
+                    this.showResult('Please enter a webhook URL', 'error');
+                    return;
+                }
+                
+                if (!messageContent && !imageUrl) {
+                    this.showResult('Please enter a message or image URL', 'error');
+                    return;
+                }
+                
+                // Disable button during sending
+                this.sendButton.disabled = true;
+                this.sendButton.innerHTML = `
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 6V12L16 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Sending...
+                `;
+                
+                try {
+                    // Prepare webhook payload
+                    const payload = {};
+                    
+                    if (messageContent) {
+                        payload.content = messageContent;
+                    }
+                    
+                    if (username) {
+                        payload.username = username;
+                    }
+                    
+                    if (avatarUrl) {
+                        payload.avatar_url = avatarUrl;
+                    }
+                    
+                    // Add embed with image if provided
+                    if (imageUrl) {
+                        payload.embeds = [{
+                            image: {
+                                url: imageUrl
+                            }
+                        }];
+                    }
+                    
+                    // Send webhook
+                    const response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (response.ok) {
+                        this.showResult('✅ Webhook sent successfully!', 'success');
+                        this.clearForm();
+                    } else {
+                        const errorText = await response.text();
+                        throw new Error(`HTTP ${response.status}: ${errorText}`);
+                    }
+                } catch (error) {
+                    console.error('Webhook error:', error);
+                    this.showResult(`❌ Error sending webhook: ${error.message}`, 'error');
+                } finally {
+                    // Re-enable button
+                    this.sendButton.disabled = false;
+                    this.sendButton.innerHTML = `
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19L19 12M19 12L12 5M19 12L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Send Webhook
+                    `;
+                }
+            }
+
+            clearForm() {
+                this.form.reset();
+                this.resultContainer.style.display = 'none';
+            }
+
+            showResult(message, type) {
+                this.resultMessage.textContent = message;
+                this.resultContainer.className = 'result-container';
+                this.resultContainer.classList.add(type === 'success' ? 'result-success' : 'result-error');
+                this.resultContainer.style.display = 'block';
+                
+                // Scroll to result
+                this.resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Language Selector
+        function updateLanguage() {
+            const languageSelector = document.getElementById('language-selector');
+            if (!languageSelector) return;
+            
+            languageSelector.addEventListener('change', function() {
+                const selectedLanguage = this.value;
+                const currentPage = window.location.pathname.split('/').pop();
+                
+                if (selectedLanguage === 'fr') {
+                    if (currentPage === 'webhook-sender.html' || currentPage === '') {
+                        window.location.href = 'webhook-sender-fr.html';
+                    }
+                } else {
+                    // For other languages, default to English
+                    if (currentPage === 'webhook-sender-fr.html') {
+                        window.location.href = 'webhook-sender.html';
+                    }
+                }
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThemeManager();
+            new WebhookSender();
+            updateLanguage();
+        });
+    </script>
+</body>
+</html>
