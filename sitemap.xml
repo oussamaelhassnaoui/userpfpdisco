@@ -5,7 +5,7 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     
     <url>
-        <loc>https://pfpsaver.com/</loc>
+        <loc>https://pfpsaver.com/discord-pfp-viewer.html</loc>
         <lastmod>2025-10-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -54,28 +54,28 @@
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/index-fr.html</loc>
+        <loc>https://pfpsaver.com/discord-pfp-viewer-fr.html</loc>
         <lastmod>2025-10-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/index-de.html</loc>
+        <loc>https://pfpsaver.com/discord-pfp-viewer-de.html</loc>
         <lastmod>2025-10-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/index-es.html</loc>
+        <loc>https://pfpsaver.com/discord-pfp-viewer-es.html</loc>
         <lastmod>2025-10-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/index-ar.html</loc>
+        <loc>https://pfpsaver.com/discord-pfp-viewer-ar.html</loc>
         <lastmod>2025-10-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

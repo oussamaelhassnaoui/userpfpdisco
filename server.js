@@ -30,7 +30,12 @@ const server = http.createServer((req, res) => {
   
   // Handle root path
   if (filePath === './') {
-    filePath = './index.html';
+    filePath = './discord-pfp-viewer.html';
+  }
+  
+  // Handle legacy index.html requests
+  if (filePath === './index.html') {
+    filePath = './discord-pfp-viewer.html';
   }
   
   // Handle favicon requests

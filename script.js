@@ -1700,7 +1700,7 @@ const app = new App();
         const detectedLanguage = detectLanguage();
         
         // If we're on the main page and the detected language is not English
-        if ((currentPath === '/' || currentPath === '/index.html') && detectedLanguage !== 'en') {
+        if ((currentPath === '/' || currentPath === '/discord-pfp-viewer.html') && detectedLanguage !== 'en') {
             const languagePages = {
                 'fr': '/index-fr.html',
                 'de': '/index-de.html',

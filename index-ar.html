@@ -1,642 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#5865f2">
-    <title>عارض صور Discord الشخصية</title>
-    <meta name="description" content="أداة مجانية لتحميل صور وأفاتارات Discord. ابحث عن ملفات تعريف Discord بالرقم التعريفي باستخدام أداة بحث صور Discord الشخصية. نزّل الأفاتارات وصور الملفات الشخصية والبانرات عالية الجودة فورًا. ابحث عن ملف تعريف Discord برقم المستخدم.">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdn.discordapp.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="dns-prefetch" href="https://discordlookup.mesalytic.moe">
-    <link rel="dns-prefetch" href="https://japi.rest">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css" as="style" crossorigin="anonymous">
-    <link rel="preload" href="script.js" as="script" crossorigin="anonymous">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="pfpdicor.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="pfpdicor.svg">
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- SEO Keywords -->
-    <meta name="keywords" content="معرف ديسكورد, بحث ديسكورد, بحث معرف ديسكورد, بحث مستخدم ديسكورد, discord user search, عارض ملف ديسكورد, تحميل أفاتار ديسكورد, تحميل بانر ديسكورد, العثور على مستخدم ديسكورد, باحث مستخدمي ديسكورد, صورة شخصية ديسكورد, صورة ملف ديسكورد, بحث اسم مستخدم ديسكورد, معلومات مستخدم ديسكورد">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="أداة بحث معرف ديسكورد">
-    <link rel="canonical" href="https://pfpsaver.com/index-ar.html">
-    <link rel="alternate" hreflang="en" href="https://pfpsaver.com/">
-    <link rel="alternate" hreflang="fr" href="https://pfpsaver.com/index-fr.html">
-    <link rel="alternate" hreflang="de" href="https://pfpsaver.com/index-de.html">
-    <link rel="alternate" hreflang="es" href="https://pfpsaver.com/index-es.html">
-    <link rel="alternate" hreflang="ar" href="https://pfpsaver.com/index-ar.html">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="أداة تحميل أفاتارات وصور ملفات تعريف Discord - بحث صور Discord الشخصية">
-    <meta property="og:description" content="أداة مجانية لتحميل صور وأفاتارات Discord. ابحث عن ملفات تعريف Discord بالرقم التعريفي ونزّل الأفاتارات والبانرات عالية الجودة فورًا.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pfpsaver.com/index-ar.html">
-    <meta property="og:image" content="https://pfpsaver.com/pfpdicor.svg">
-    <meta property="og:site_name" content="بحث معرف ديسكورد">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@yourhandle">
-    <meta name="twitter:title" content="أداة تحميل أفاتارات وصور ملفات تعريف Discord - بحث صور Discord الشخصية">
-    <meta name="twitter:description" content="ابحث فورًا عن ملفات تعريف Discord بالرقم التعريفي ونزّل الأفاتارات وصور الملفات الشخصية عالية الجودة. أداة بحث صور Discord الشخصية المجانية.">
-    <meta name="twitter:image" content="https://pfpsaver.com/pfpdicor.svg">
-    
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#5865f2">
-    <meta name="msapplication-TileColor" content="#5865f2">
-    <meta name="application-name" content="بحث معرف ديسكورد">
-    <meta name="apple-mobile-web-app-title" content="بحث معرف ديسكورد">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "أداة تحميل أفاتارات وصور ملفات تعريف Discord",
-      "description": "أداة مجانية لتحميل صور وأفاتارات Discord. ابحث عن ملفات تعريف Discord بالرقم التعريفي باستخدام أداة بحث صور Discord الشخصية. نزّل الأفاتارات وصور الملفات الشخصية والبانرات عالية الجودة فورًا.",
-      "url": "https://pfpsaver.com/index-ar.html",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "بحث صور Discord الشخصية"
-      },
-      "featureList": [
-        "بحث ملف تعريف Discord بالرقم التعريفي",
-        "عارض ملف تعريف Discord",
-        "تحميل أفاتار Discord",
-        "تحميل بانر Discord"
-      ],
-      "keywords": "أفاتار ديسكورد, ملف تعريف ديسكورد, صورة شخصية ديسكورد, ملف ديسكورد, معرف ديسكورد, بحث صورة شخصية ديسكورد, تحميل أفاتار ديسكورد, صورة ملف ديسكورد"
-    }
-    </script>
-    <!-- Additional Schema for FAQ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "كيف أعثر على معرف مستخدم Discord للبحث؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "لإيجاد معرف مستخدم Discord لأداة بحث Discord، قم بتمكين وضع المطور في إعدادات Discord، ثم انقر بزر الماوس الأيمن على أي مستخدم واختر 'نسخ معرف المستخدم'. استخدم هذا المعرف في أداة بحث مستخدمي Discord."
-        }
-      }, {
-        "@type": "Question",
-        "name": "هل خدمة بحث معرف Discord مجانية؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "نعم! خدمات بحث مستخدمي Discord وبحث مستخدمي Discord مجانية تمامًا. يمكنك إجراء عمليات بحث معرف Discord غير محدودة دون أي تكلفة."
-        }
-      }, {
-        "@type": "Question",
-        "name": "هل يمكنني تحميل أفاتارات Discord باستخدام هذه الأداة؟",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "بالتأكيد! تتيح لك أداة بحث Discord تحميل أفاتارات وبانرات Discord بأعلى جودة متوفرة، بما في ذلك صور الملفات الشخصية المتحركة لـ Discord."
-        }
-      }]
-    }
-    </script>
-    <!-- WebSite Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "عارض صور Discord الشخصية",
-      "url": "https://pfpsaver.com/index-ar.html"
-    }
-    </script>
-     <script type="text/javascript">
-    (function() {
-    window.__insp = window.__insp || [];
-    __insp.push(['wid', 1327617955]);
-    var ldinsp = function(){
-    if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=1327617955&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-    setTimeout(ldinsp, 0);
-    })();
-    </script>
+    <meta http-equiv="refresh" content="0; url=discord-pfp-viewer-ar.html">
+    <title>إعادة التوجيه...</title>
 </head>
 <body>
-    <!-- Skip Link for Accessibility -->
-    
-    
-    <!-- Header with Navigation -->
-    <header class="header" role="banner">
-        <div class="container">
-            <!-- Logo and Brand -->
-            <div class="brand">
-                <a href="/index-ar.html" class="logo" aria-label="الصفحة الرئيسية لعارض ملف تعريف Discord">
-                    <span class="logo-icon">💜</span>
-                    <span class="logo-text">تنويه: موقعنا <u>غير مرتبط</u> بشركة Discord Inc</span>
-                </a>
-            </div>
-            
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Language Selector -->
-                <div class="language-selector">
-                    <select id="language-selector" aria-label="اختر اللغة">
-                        <option value="en">English</option>
-                        <option value="fr">Français</option>
-                        <option value="de">Deutsch</option>
-                        <option value="es">Español</option>
-                        <option value="ar" selected>العربية</option>
-                    </select>
-                </div>
-                <!-- Theme Toggle -->
-                <button class="theme-toggle" id="theme-toggle" aria-label="تبديل السمة الداكنة/الفاتحة">
-                    <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C13.029 15.75 9 11.721 9 6.75A9.718 9.718 0 0 1 9.748 2.248A10.003 10.003 0 0 0 2 12C2 17.523 6.477 22 12 22A10.003 10.003 0 0 0 21.752 15.002Z" fill="currentColor"/>
-                    </svg>
-                    <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.071 4.929L17.657 6.343M6.343 17.657L4.929 19.071M19.071 19.071L17.657 17.657M6.343 6.343L4.929 4.929M16 12C16 14.209 14.209 16 12 16C9.791 16 8 14.209 8 12C8 9.791 9.791 8 12 8C14.209 8 16 9.791 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Main Content -->
-    <main id="main-content" class="main" role="main">
-        <div class="container">
-            <div class="main-content-wrapper">
-            <!-- Hero Section -->
-            <section class="hero" aria-labelledby="hero-title">
-                <div class="hero-logo">
-                    <img src="pfpdicor.svg" width="40" height="40" loading="lazy" alt="شعار أداة تحميل أفاتارات وصور ملفات تعريف Discord">
-                </div>
-                <h1 id="hero-title" class="hero-title">
-                 أداة تحميل أفاتارات وصور ملفات تعريف Discord
-                </h1>
-                <p class="hero-description">
-                    ابحث عن صور وأفاتارات Discord ونزّلها برقم المستخدم باستخدام أداة بحث صور Discord الشخصية
-                </p>
-            </section>
-            
-            <!-- Discord PFP Viewer Section -->
-            <section class="discord-pfp-viewer" aria-labelledby="discord-section-title">
-                <div class="discord-section-header">
-                    <h2 id="discord-section-title" class="section-title">
-                        <span class="discord-icon">💬</span>
-                        بحث صور Discord الشخصية & عارض الملف
-                    </h2>
-                    
-                </div>
-                
-                <div class="discord-search-container">
-                    <div class="discord-search-form">
-                        <div class="discord-input-group">
-                            <label for="discord-user-id" class="discord-label">معرف مستخدم/بوت Discord (ليس اسم المستخدم):</label>
-                            <div class="discord-input-wrapper">
-                                <input 
-                                    type="text" 
-                                    id="discord-user-id" 
-                                    class="discord-input" 
-                                    placeholder="أدخل معرف مستخدم Discord (مثال: 123456789012345678)"
-                                    pattern="[0-9]{17,19}"
-                                    title="يجب أن يتكون معرف مستخدم Discord من 17-19 رقمًا لبحث Discord"
-                                    aria-describedby="discord-help-text"
-                                    aria-label="معرف مستخدم Discord للبحث في الملف"
-                                >
-                                <button class="discord-search-btn" id="discord-search-btn" type="button" aria-label="البحث عن مستخدم Discord بالرقم التعريفي">
-                                    <svg class="discord-search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path d="M21 21L15.515 15.515M15.515 15.515A7.5 7.5 0 1 0 4.515 4.515A7.5 7.5 0 0 0 15.515 15.515Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    بحث Discord
-                                </button>
-                            </div>
-                            <small id="discord-help-text" class="discord-help-text">
-                                استخدم أداة بحث معرف Discord: انقر بزر الماوس الأيمن على مستخدم Discord → نسخ معرف المستخدم (يجب تفعيل وضع المطور)
-                                <button class="discord-help-toggle" id="discord-help-toggle">هل تحتاج مساعدة في بحث Discord؟</button>
-                            </small>
-                        </div>
-                    </div>
-                    
-                    <!-- Discord PFP Results -->
-                    <div class="discord-results" id="discord-results" style="display: none;">
-                        <div class="discord-user-card">
-                            <div class="discord-avatar-container">
-                                <img id="discord-avatar" class="discord-avatar" src="" alt="أفاتار Discord" loading="lazy">
-                                <div class="discord-avatar-overlay">
-                                    <button class="discord-preview-btn" id="discord-preview-btn" aria-label="معاينة الأفاتار">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
-                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <div class="discord-user-info">
-                                <h3 id="discord-username" class="discord-username">جارٍ التحميل...</h3>
-                                <p id="discord-user-id-display" class="discord-user-id-display"></p>
-                                <p id="discord-creation-date" class="discord-creation-date"></p>
-                                <div class="discord-user-badges" id="discord-user-badges"></div>
-                            </div>
-                            
-                            <div class="discord-download-options">
-                                <div class="download-section">
-                                    <h4 class="download-section-title">🖼️ صورة الملف الشخصي</h4>
-                                    <div class="download-controls">
-                                        <div class="discord-format-selector">
-                                            <label for="avatar-format" class="discord-format-label">التنسيق:</label>
-                                            <select id="avatar-format" class="discord-format-select">
-                                                <option value="png" selected>PNG (أعلى جودة)</option>
-                                                <option value="jpg">JPG</option>
-                                                <option value="webp">WebP</option>
-                                                <option value="gif">GIF (إذا كان متحركًا)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
-                                    <button class="discord-download-btn primary" id="discord-download-btn">
-                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        تحميل صورة الملف الشخصي
-                                    </button>
-                                </div>
-                                
-                                <div class="download-section banner-section" id="banner-download-section" style="display: none;">
-                                    <h4 class="download-section-title">🌆 بانر الملف الشخصي</h4>
-                                    <p class="banner-info">بانر عالي الجودة (1024x1024)</p>
-                                    
-                                    <button class="discord-download-btn secondary" id="discord-banner-download-btn">
-                                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        تحميل البانر
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <!-- Discord Banner Display in User Card -->
-                            <div class="discord-banner-card-section" id="discord-banner-card-section" style="display: none; margin: 20px 0;">
-                                <h4 class="discord-banner-title">بانر الملف الشخصي</h4>
-                                <div class="discord-banner-card-container">
-                                    <img id="discord-banner-card" class="discord-banner-card" src="" alt="بانر Discord" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;">
-                                    <div class="discord-banner-card-overlay">
-                                        <button class="discord-preview-btn" id="discord-banner-card-preview-btn" aria-label="معاينة البانر">
-                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
-                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                                <button class="discord-download-btn secondary" id="discord-banner-card-download-btn" style="margin-top: 10px; width: 100%;">
-                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    تحميل البانر
-                                </button>
-                            </div>
-                            
-                            <!-- Discord Banner Display -->
-                            <div class="discord-banner-section" id="discord-banner-section" style="display: none;">
-                                <h4 class="discord-banner-title">بانر الملف الشخصي</h4>
-                                <div class="discord-banner-container">
-                                    <img id="discord-banner" class="discord-banner" src="" alt="بانر Discord">
-                                    <div class="discord-banner-placeholder" id="discord-banner-placeholder" style="display: none; padding: var(--space-xl); text-align: center; color: var(--color-text-tertiary);">
-                                        <p>جارٍ تحميل البانر<span class="loading-dots"></span></p>
-                                    </div>
-                                    <div class="discord-banner-actions">
-                                        <button class="discord-banner-preview-btn" id="discord-banner-preview-btn">
-                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
-                                                <path d="M2 12S7 5 12 5S22 12 22 12S17 19 12 19S2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
-                                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                            </svg>
-                                            معاينة
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Help Section -->
-                    <div class="discord-help-section" id="discord-help-section" style="display: none;">
-                        <div class="help-card">
-                            <h4 class="help-title" id="help-message">📋 كيفية الحصول على معرف مستخدم Discord</h4>
-                            <div class="help-steps">
-                                <div class="help-step">
-                                    
-                                </div>
-                                <div class="help-step">
-                                    <span class="step-number">1</span>
-                                    <div class="step-content">
-                                        <h5>انقر بزر الماوس الأيمن على المستخدم</h5>
-                                        <p>انقر بزر الماوس الأيمن على أفاتار أو اسم مستخدم أي مستخدم</p>
-                                    </div>
-                                </div>
-                                <div class="help-step">
-                                    <span class="step-number">2</span>
-                                    <div class="step-content">
-                                        <h5>نسخ معرف المستخدم</h5>
-                                        <p>انقر على "نسخ معرف المستخدم" من القائمة السياقية</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="help-examples">
-                                <h5>أمثلة على معرفات المستخدمين للاختبار:</h5>
-                                <div class="example-ids">
-                                    <button class="example-id-btn" data-id="235088799074484224">235088799074484224</button>
-                                    <button class="example-id-btn" data-id="155149108183695360">155149108183695360</button>
-                                    <button class="example-id-btn" data-id="432610292342587392">432610292342587392</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Visual Guide Section -->
-                    <div class="discord-help-section" style="margin-top: 20px;">
-                        <div class="help-card">
-                            <h4 class="help-title">🖼️ دليل بصري: كيفية الحصول على معرف Discord الخاص بك</h4>
-                            <div class="visual-guide-steps">
-                                <div class="visual-guide-step">
-                                    <span class="step-number">1</span>
-                                    <div class="step-content">
-                                        
-                                        <img src="pfpsaver1.gif" alt="تفعيل وضع المطور في Discord">
-                                    </div>
-                                </div>
-                                <div class="visual-guide-step">
-                                    <span class="step-number">2</span>
-                                    <div class="step-content">
-                                        
-                                        <img src="pfpsaver2.gif" alt="نسخ معرف المستخدم من Discord">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="help-tips">
-                                <h5>💡 نصائح احترافية:</h5>
-                                <ul>
-                                    <li>يمكنك أيضًا نسخ معرفك الخاص بالذهاب إلى إعدادات المستخدم → حسابي → انقر على النقاط الثلاث بجانب اسم المستخدم الخاص بك</li>
-                                    <li>يمكن العثور على معرفات البوتات بنفس الطريقة بالنقر بزر الماوس الأيمن على البوتات في الخوادم</li>
-                                    <li>تأكد من تفعيل وضع المطور قبل محاولة نسخ المعرفات</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Discord Loading State -->
-                    <div class="discord-loading" id="discord-loading" style="display: none;">
-                        <p class="loading-text">جارٍ جلب ملف تعريف Discord<span class="loading-dots"></span></p>
-                    </div>
-                    
-                    <!-- Discord Error State -->
-                    <div class="discord-error" id="discord-error" style="display: none;">
-                        <div class="error-icon">⚠️</div>
-                        <h3 class="error-title">فشل في جلب الملف الشخصي</h3>
-                        <p class="error-message" id="discord-error-message">يرجى التحقق من معرف المستخدم والمحاولة مرة أخرى.</p>
-                        <button class="error-retry-btn" id="discord-retry-btn">حاول مرة أخرى</button>
-                    </div>
-                </div>
-            </section>
-            </div>
-            
-            <!-- SEO Content Section -->
-            <section class="seo-content" aria-labelledby="seo-content-title">
-                <div class="seo-content-wrapper">
-                    <h2 id="seo-content-title" class="seo-title">أداة تحميل أفاتارات وصور ملفات تعريف Discord - ابحث عن صور Discord الشخصية ونزّلها بالرقم التعريفي</h2>
-                    
-                    <div class="seo-grid">
-                        <div class="seo-card">
-                            <h3>ما هو بحث صور Discord الشخصية؟</h3>
-                            <p>بحث صور Discord الشخصية هو خدمة مجانية تتيح لك البحث عن ملفات تعريف Discord باستخدام معرف مستخدم Discord الفريد الخاص بهم. تساعدك أداة تحميل أفاتارات وصور ملفات تعريف Discord على العثور على ملفات تعريف Discord وعرض معلومات المستخدم وتنزيل أفاتارات وبانرات Discord عالية الجودة فورًا.</p>
-                        </div>
-                        
-                        <div class="seo-card">
-                            <h3>كيف تجد أفاتارات وصور ملفات تعريف Discord</h3>
-                            <p>ما عليك سوى إدخال معرف مستخدم Discord (17-19 رقمًا) في أداة بحث صور Discord الشخصية. سيجد عارض ملف تعريف Discord ملف تعريف Discord فورًا وسيعرض أفاتار المستخدم والبانر وتاريخ الإنشاء ومعلومات عامة أخرى. نزّل أفاتارات وصور ملفات تعريف Discord بجودة عالية.</p>
-                        </div>
-                        
-                        <div class="seo-card">
-                            <h3>ميزات تحميل أفاتارات وصور ملفات تعريف Discord</h3>
-                            <ul>
-                                <li>خدمة بحث صور Discord الشخصية المجانية</li>
-                                <li>بحث ملف تعريف Discord بالرقم التعريفي</li>
-                                <li>نزّل أفاتارات وصور ملفات تعريف Discord بجودة عالية</li>
-                                <li>نزّل بانرات Discord (إذا كانت متوفرة)</li>
-                                <li>اعرض تاريخ إنشاء مستخدم Discord</li>
-                                <li>دعم صور ملفات تعريف Discord المتحركة</li>
-                                <li>عارض ملف تعريف Discord بمعلومات مفصلة</li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="seo-faq">
-                        <h3>الأسئلة المتكررة حول أفاتارات وصور ملفات تعريف Discord</h3>
-                        <div class="faq-item">
-                            <h4>كيف أعثر على معرف مستخدم Discord لبحث صور Discord الشخصية؟</h4>
-                            <p>لإيجاد معرف مستخدم Discord لأداة تحميل أفاتارات Discord، قم بتمكين وضع المطور في إعدادات Discord، ثم انقر بزر الماوس الأيمن على أي مستخدم واختر "نسخ معرف المستخدم". استخدم هذا المعرف في أداة بحث ملف تعريف Discord لعرض وتنزيل صور الملفات الشخصية والأفاتارات.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>هل خدمة بحث صور Discord الشخصية مجانية للعثور على صور الملفات الشخصية والأفاتارات؟</h4>
-                            <p>نعم! خدمات أداة تحميل أفاتارات وصور ملفات تعريف Discord مجانية تمامًا. يمكنك إجراء عمليات بحث معرف Discord غير محدودة للعثور على ملفات تعريف Discord وتنزيل الأفاتارات وصور الملفات الشخصية دون أي تكلفة.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>هل يمكنني تحميل أفاتارات وصور ملفات تعريف Discord باستخدام أداة بحث صور Discord الشخصية هذه؟</h4>
-                            <p>بالتأكيد! تتيح لك أداة تحميل أفاتارات Discord تنزيل صور الملفات الشخصية والبانرات في أعلى جودة متوفرة، بما في ذلك أفاتارات Discord المتحركة. ما عليك سوى البحث عن ملفات تعريف Discord بالرقم التعريفي وتنزيل أفاتارها وصورة ملفها الشخصي.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>ما جودة الأفاتارات وصور ملفات تعريف Discord التي تم تنزيلها؟</h4>
-                            <p>عند استخدام أداة بحث صور Discord الشخصية لتنزيل الأفاتارات وصور الملفات الشخصية، تحصل على أعلى جودة متوفرة. يمكن تنزيل أفاتارات Discord المخصصة بدقة تصل إلى 4096×4096، بينما تتوفر صور الملفات الشخصية الافتراضية بدقة 1024×1024. يتم تنزيل بانرات Discord بأعلى جودة متوفرة.</p>
-                        </div>
-                        <div class="faq-item">
-                            <h4>هل يمكنني العثور على أفاتارات وصور ملفات تعريف Discord متحركة؟</h4>
-                            <p>نعم، تدعم أداة بحث صور Discord الشخصية بشكل كامل صور الملفات الشخصية المتحركة (تنسيق GIF). إذا كان لدى المستخدم أفاتار Discord متحرك، فسترى شارة "متحرك" ويمكنك تنزيله بتنسيق GIF وبجودة كاملة.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="seo-content-extra">
-                        <h3>حول أفاتارات وصور ملفات تعريف Discord</h3>
-                        <p>تُعد أفاتارات وصور ملفات تعريف Discord جزءًا أساسيًا من هوية المستخدم على منصة Discord. باستخدام أداة بحث صور Discord الشخصية، يمكنك بسهولة العثور على ملفات تعريف Discord وتنزيل أفاتارات عالية الجودة من أي مستخدم Discord. سواء كنت تبحث عن إلهام لملفك الشخصي أو تريد حفظ أفاتار Discord مفضل، فإن أداتنا تجعل الأمر بسيطًا وسريعًا.</p>
-                        
-                        <h3>الاستخدامات الشائعة لأفاتارات وصور ملفات تعريف Discord</h3>
-                        <p>يستخدم أداة تحميل أفاتارات Discord آلاف مستخدمي Discord يوميًا لأغراض مختلفة. تشمل بعض الاستخدامات الشائعة العثور على صور الملفات الشخصية لرقابة خوادم Discord والتحقق من هويات المستخدمين وتنزيل الأفاتارات للمجموعات الشخصية والعثور على إلهام لتصاميم ملفات تعريف Discord المخصصة.</p>
-                        
-                        <h3>جودة أفاتارات وصور ملفات تعريف Discord</h3>
-                        <p>عند استخدام أداة بحث صور Discord الشخصية لتنزيل الأفاتارات وصور الملفات الشخصية، تحصل على أعلى جودة متوفرة. يمكن تنزيل أفاتارات Discord المخصصة بدقة تصل إلى 4096×4096، بينما تتوفر صور الملفات الشخصية الافتراضية بدقة 1024×1024. كما يتم تنزيل بانرات Discord بأعلى جودة لتجربة عرض مثالية.</p>
-                    </div>
-                </div>
-            </section>
-            
-    </main>
-    
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">أداة تحميل أفاتارات وصور ملفات تعريف Discord</h3>
-                    <p class="footer-description">
-                        خدمة بحث صور Discord الشخصية وبحث ملفات تعريف Discord المجانية. ابحث عن مستخدمي Discord واعرض الملفات ونزّل الأفاتارات وصور الملفات الشخصية عالية الجودة. عارض ملف تعريف Discord فوري.
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">أدوات ملف تعريف Discord</h4>
-                    <ul class="footer-links">
-                        <li><a href="#" title="بحث صور Discord الشخصية">بحث صور Discord الشخصية</a></li>
-                        <li><a href="#" title="العثور على ملف تعريف Discord">العثور على ملف تعريف Discord</a></li>
-                        <li><a href="#" title="تحميل أفاتار Discord">تحميل أفاتار Discord</a></li>
-                        <li><a href="#" title="تحميل بانر Discord">تحميل بانر Discord</a></li>
-                        <li><a href="#" title="عارض ملف تعريف Discord">عارض ملف تعريف Discord</a></li>
-                        <li><a href="webhook-sender.html" title="مرسل Webhook لـ Discord">مرسل Webhook لـ Discord</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">حول</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                        <li><a href="#">شروط الخدمة</a></li>
-                        <li><a href="#">اتصل بنا</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 أداة بحث معرف Discord - خدمة بحث مستخدمي Discord المجانية. غير مرتبط بـ Discord, Inc.
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Image Preview Modal -->
-    <div class="modal" id="image-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-overlay" id="modal-overlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modal-title" class="modal-title">معاينة الصورة</h2>
-                <button class="modal-close" id="modal-close" aria-label="إغلاق النافذة">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="modal-body">
-                <div class="modal-image-container">
-                    <img id="modal-image" class="modal-image" src="" alt="">
-                </div>
-                
-                <div class="modal-info">
-                    <h3 id="modal-image-title" class="modal-image-title"></h3>
-                    <p id="modal-image-category" class="modal-image-category"></p>
-                    <div class="modal-actions">
-                        <button class="btn btn-primary" id="download-btn">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            تحميل
-                        </button>
-                        <button class="btn btn-secondary" id="share-btn">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 5.18885 15.0133 5.37442 15.0387 5.55624L8.56815 9.24695C8.01119 8.46217 7.08205 7.96094 6.03077 7.96094C4.25769 7.96094 2.82031 9.39832 2.82031 11.1714C2.82031 12.9445 4.25769 14.3819 6.03077 14.3819C7.08205 14.3819 8.01119 13.8806 8.56815 13.0959L15.0387 16.7866C15.0133 16.9684 15 17.154 15 17.3428C15 19.0159 16.4374 20.4533 18.2105 20.4533C19.9836 20.4533 21.421 19.0159 21.421 17.3428C21.421 15.6697 19.9836 14.2323 18.2105 14.2323C17.1592 14.2323 16.2301 14.7336 15.673 15.5183L9.20248 11.8276C9.22789 11.6458 9.24123 11.4602 9.24123 11.2714C9.24123 11.0826 9.22789 10.897 9.20248 10.7152L15.673 7.02449C16.2301 7.80927 17.1592 8.31051 18.2105 8.31051Z" fill="currentColor"/>
-                            </svg>
-                            مشاركة
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <p>إذا لم تتم إعادة التوجيه تلقائياً، اتبع هذا <a href="discord-pfp-viewer-ar.html">الرابط إلى عارض صور ملفات Discord</a>.</p>
     <script>
-        // Language detection and redirection
-        (function() {
-            // Function to detect user's preferred language
-            function detectLanguage() {
-                // Check if user has already selected a language
-                const savedLanguage = localStorage.getItem('preferredLanguage');
-                if (savedLanguage) {
-                    return savedLanguage;
-                }
-                
-                // Get browser's preferred languages
-                const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
-                
-                // Check for supported languages in order of preference
-                for (let lang of browserLanguages) {
-                    // Handle language codes like "en-US", "fr-FR", etc.
-                    const primaryLang = lang.split('-')[0].toLowerCase();
-                    
-                    // Supported languages
-                    const supportedLanguages = {
-                        'en': 'en',
-                        'fr': 'fr',
-                        'de': 'de',
-                        'es': 'es',
-                        'ar': 'ar'
-                    };
-                    
-                    if (supportedLanguages[primaryLang]) {
-                        return supportedLanguages[primaryLang];
-                    }
-                }
-                
-                // Default to English if no supported language is found
-                return 'en';
-            }
-            
-            // Function to redirect to the appropriate language page
-            function redirectToLanguagePage() {
-                const currentPath = window.location.pathname;
-                const detectedLanguage = detectLanguage();
-                
-                // If we're on a language-specific page and the detected language is different
-                if (currentPath.includes('index-ar.html') && detectedLanguage !== 'ar') {
-                    const languagePages = {
-                        'en': '/',
-                        'fr': '/index-fr.html',
-                        'de': '/index-de.html',
-                        'es': '/index-es.html'
-                    };
-                    
-                    if (languagePages[detectedLanguage]) {
-                        // Save the preferred language
-                        localStorage.setItem('preferredLanguage', detectedLanguage);
-                        
-                        // Redirect to the language-specific page
-                        window.location.href = languagePages[detectedLanguage];
-                    }
-                }
-            }
-            
-            // Run the language detection on page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', redirectToLanguagePage);
-            } else {
-                redirectToLanguagePage();
-            }
-        })();
+        window.location.href = "discord-pfp-viewer-ar.html";
     </script>
 </body>
 </html>
