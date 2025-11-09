@@ -1700,12 +1700,12 @@ const app = new App();
         const detectedLanguage = detectLanguage();
         
         // If we're on the main page and the detected language is not English
-        if ((currentPath === '/' || currentPath === '/') && detectedLanguage !== 'en') {
+        if ((currentPath === '/' || currentPath === '/discord-pfp-viewer.html') && detectedLanguage !== 'en') {
             const languagePages = {
-                'fr': '/Fr/',
-                'de': '/De/',
-                'es': '/Es/',
-                'ar': '/Ar/'
+                'fr': '/index-fr.html',
+                'de': '/index-de.html',
+                'es': '/index-es.html',
+                'ar': '/index-ar.html'
             };
             
             if (languagePages[detectedLanguage]) {
@@ -1734,13 +1734,13 @@ const app = new App();
         
         // Set the selected language based on current page
         const currentPath = window.location.pathname;
-        if (currentPath.includes('/Fr/')) {
+        if (currentPath.includes('index-fr.html')) {
             languageSelector.value = 'fr';
-        } else if (currentPath.includes('/De/')) {
+        } else if (currentPath.includes('index-de.html')) {
             languageSelector.value = 'de';
-        } else if (currentPath.includes('/Es/')) {
+        } else if (currentPath.includes('index-es.html')) {
             languageSelector.value = 'es';
-        } else if (currentPath.includes('/Ar/')) {
+        } else if (currentPath.includes('index-ar.html')) {
             languageSelector.value = 'ar';
         } else {
             languageSelector.value = 'en';
@@ -1751,10 +1751,10 @@ const app = new App();
             const selectedLanguage = this.value;
             const languagePages = {
                 'en': '/',
-                'fr': '/Fr/',
-                'de': '/De/',
-                'es': '/Es/',
-                'ar': '/Ar/'
+                'fr': '/index-fr.html',
+                'de': '/index-de.html',
+                'es': '/index-es.html',
+                'ar': '/index-ar.html'
             };
             
             if (languagePages[selectedLanguage]) {

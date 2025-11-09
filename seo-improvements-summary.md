@@ -3,8 +3,8 @@
 ## New Pages Created for Better Search Engine Ranking
 
 ### 1. Download Feature
-- **URL**: `/index.html`
-- **French Version**: `/Fr/index.html`
+- **URL**: `/download-discord-pfp.html`
+- **French Version**: `/download-discord-pfp-fr.html`
 - **Keywords**: download discord pfp, save discord profile picture, discord avatar downloader
 - **Priority**: 0.9
 
@@ -29,7 +29,7 @@
 - **Priority**: 0.9
 
 ### 6. Privacy or FAQ
-- **URL**: `/faq/index.html`
+- **URL**: `/discord-pfp-faq.html`
 - **Keywords**: discord pfp faq, discord profile picture faq, discord avatar faq
 - **Priority**: 0.8
 
@@ -43,8 +43,8 @@ All new pages have been added to the sitemap.xml with appropriate:
 ## Footer Navigation Improvements
 
 Updated footer links on:
-- Main English page (`/index.html`)
-- French page (`/Fr/index.html`)
+- Main English page (`discord-pfp-viewer.html`)
+- French page (`discord-pfp-viewer-fr.html`)
 
 Added direct links to all new SEO pages for better internal linking.
 
