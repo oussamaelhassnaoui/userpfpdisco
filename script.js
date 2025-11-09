@@ -1700,12 +1700,12 @@ const app = new App();
         const detectedLanguage = detectLanguage();
         
         // If we're on the main page and the detected language is not English
-        if ((currentPath === '/' || currentPath === '/discord-pfp-viewer.html') && detectedLanguage !== 'en') {
+        if ((currentPath === '/' || currentPath === '/') && detectedLanguage !== 'en') {
             const languagePages = {
-                'fr': '/index-fr.html',
-                'de': '/index-de.html',
-                'es': '/index-es.html',
-                'ar': '/index-ar.html'
+                'fr': '/Fr/',
+                'de': '/De/',
+                'es': '/Es/',
+                'ar': '/Ar/'
             };
             
             if (languagePages[detectedLanguage]) {
@@ -1734,13 +1734,13 @@ const app = new App();
         
         // Set the selected language based on current page
         const currentPath = window.location.pathname;
-        if (currentPath.includes('index-fr.html')) {
+        if (currentPath.includes('/Fr/')) {
             languageSelector.value = 'fr';
-        } else if (currentPath.includes('index-de.html')) {
+        } else if (currentPath.includes('/De/')) {
             languageSelector.value = 'de';
-        } else if (currentPath.includes('index-es.html')) {
+        } else if (currentPath.includes('/Es/')) {
             languageSelector.value = 'es';
-        } else if (currentPath.includes('index-ar.html')) {
+        } else if (currentPath.includes('/Ar/')) {
             languageSelector.value = 'ar';
         } else {
             languageSelector.value = 'en';
@@ -1751,10 +1751,10 @@ const app = new App();
             const selectedLanguage = this.value;
             const languagePages = {
                 'en': '/',
-                'fr': '/index-fr.html',
-                'de': '/index-de.html',
-                'es': '/index-es.html',
-                'ar': '/index-ar.html'
+                'fr': '/Fr/',
+                'de': '/De/',
+                'es': '/Es/',
+                'ar': '/Ar/'
             };
             
             if (languagePages[selectedLanguage]) {

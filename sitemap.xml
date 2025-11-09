@@ -5,7 +5,7 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     
     <url>
-        <loc>https://pfpsaver.com/discord-pfp-viewer.html</loc>
+        <loc>https://pfpsaver.com/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -19,7 +19,7 @@
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/download-discord-pfp-fr.html</loc>
+        <loc>https://pfpsaver.com/Fr/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -54,28 +54,28 @@
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/discord-pfp-faq.html</loc>
+        <loc>https://pfpsaver.com/faq/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/privacy-policy.html</loc>
+        <loc>https://pfpsaver.com/privacy-policy/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/terms-of-service.html</loc>
+        <loc>https://pfpsaver.com/terms-of-service/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/contact.html</loc>
+        <loc>https://pfpsaver.com/contact/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -96,35 +96,35 @@
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/contact-fr.html</loc>
+        <loc>https://pfpsaver.com/contact-fr/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/discord-pfp-viewer-fr.html</loc>
+        <loc>https://pfpsaver.com/Fr/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/discord-pfp-viewer-de.html</loc>
+        <loc>https://pfpsaver.com/De/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/discord-pfp-viewer-es.html</loc>
+        <loc>https://pfpsaver.com/Es/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://pfpsaver.com/discord-pfp-viewer-ar.html</loc>
+        <loc>https://pfpsaver.com/Ar/</loc>
         <lastmod>2025-10-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
